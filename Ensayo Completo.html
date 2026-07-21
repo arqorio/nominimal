@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ensayo completo · ¿Por qué América Latina no puede ser minimalista?</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Barlow:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Zilla+Slab:ital,wght@0,500;0,600;1,400;1,500;1,600&display=swap" rel="stylesheet">
+<style>
+:root{--blue:#15369e;--pink:#e0216f;--gold:#f4b400;--green:#2c6e49;--terra:#c0381c;--cream:#f2e7d3;--ink:#1a1a1a}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Barlow',system-ui,sans-serif;color:var(--ink);background:var(--cream);line-height:1.62;-webkit-font-smoothing:antialiased}
+h1,h2,h3,.disp{font-family:'Archivo',sans-serif;line-height:.98;letter-spacing:-.01em;text-transform:uppercase}
+.kicker{font-family:'Archivo',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.26em;font-size:.8rem}
+a{color:var(--pink);text-decoration:none;transition:color .18s}
+a:hover{color:var(--gold)}
+::selection{background:var(--gold);color:var(--ink)}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+img{display:block;max-width:100%}
+.col{width:min(720px,90vw);margin-inline:auto}
+.wide{width:min(1080px,92vw);margin-inline:auto}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:50;background:var(--blue);color:var(--cream);border-bottom:3px solid var(--gold)}
+.nav .in{width:min(1080px,92vw);margin-inline:auto;display:flex;align-items:center;justify-content:space-between;min-height:60px;gap:1rem}
+.nav .brand{font-family:'Archivo',sans-serif;font-weight:800;text-transform:uppercase;color:var(--cream);font-size:1rem}
+.nav .brand b{color:var(--gold)}
+.nav .back{font-family:'Archivo',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.12em;font-size:.76rem;color:var(--cream)}
+.nav .back:hover{color:var(--gold)}
+
+/* masthead */
+.masthead{background:var(--blue);color:var(--cream);padding:clamp(3rem,7vw,5.5rem) 0 clamp(2.5rem,5vw,4rem);position:relative;overflow:hidden}
+.masthead .blocks{position:absolute;top:0;right:0;display:flex}
+.masthead .blocks span{width:clamp(48px,7vw,110px);height:clamp(80px,12vw,190px)}
+.masthead .col{position:relative;z-index:2}
+.masthead .kicker{color:var(--gold)}
+.masthead h1{font-weight:900;font-size:clamp(2.3rem,7vw,4.6rem);margin:1.3rem 0 .9rem;max-width:16ch}
+.masthead h1 .no{color:var(--gold)}
+.standfirst{font-family:'Zilla Slab',serif;font-style:italic;font-weight:500;font-size:clamp(1.1rem,2.2vw,1.5rem);color:#dfe6ff;max-width:46ch;line-height:1.4}
+.byline{display:flex;flex-wrap:wrap;gap:.5rem 1.4rem;margin-top:1.8rem;font-family:'Archivo',sans-serif;text-transform:uppercase;letter-spacing:.14em;font-size:.8rem;color:#c3ccf0;align-items:center}
+.byline b{color:var(--cream);font-weight:800;letter-spacing:.04em}
+.byline .dot{width:5px;height:5px;background:var(--gold);border-radius:50%}
+
+/* intro + toc */
+.intro{padding:clamp(2.5rem,6vw,4.5rem) 0 0}
+.lead{font-size:clamp(1.25rem,2.4vw,1.7rem);line-height:1.4;color:#2a2a26;font-weight:500;margin-bottom:1.6rem}
+.article p{font-size:clamp(1.05rem,1.5vw,1.2rem);margin-bottom:1.35rem;color:#2a2a26;text-wrap:pretty}
+.article p .fl{float:left;font-family:'Archivo',sans-serif;font-weight:900;font-size:3.8rem;line-height:.72;padding:.3rem .55rem 0 0}
+.toc{margin:2.4rem 0 1rem;border:2px solid var(--ink);background:#fff}
+.toc .top{background:var(--ink);color:var(--cream);font-family:'Archivo',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.2em;font-size:.8rem;padding:.7rem 1.1rem}
+.toc ol{list-style:none;counter-reset:t;padding:.4rem .4rem}
+.toc li{counter-increment:t}
+.toc a{display:flex;align-items:baseline;gap:.9rem;padding:.6rem 1rem;color:var(--ink);border-radius:4px;font-weight:500}
+.toc a:hover{background:var(--cream)}
+.toc a::before{content:"0" counter(t);font-family:'Archivo',sans-serif;font-weight:900;font-size:1.05rem}
+.toc a b{font-family:'Archivo',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.04em;font-size:.95rem}
+.toc a span{opacity:.7;font-size:.95rem}
+.toc li:nth-child(1) a::before{color:var(--terra)}
+.toc li:nth-child(2) a::before{color:#b8860b}
+.toc li:nth-child(3) a::before{color:var(--pink)}
+.toc li:nth-child(4) a::before{color:var(--blue)}
+.toc li:nth-child(5) a::before{color:var(--green)}
+.toc li:nth-child(6) a::before{color:var(--terra)}
+
+/* chapter */
+.ch{scroll-margin-top:70px}
+.chhead{padding:clamp(2rem,4vw,3.2rem) 0}
+.chhead .in{display:flex;align-items:center;gap:clamp(1rem,3vw,2.2rem)}
+.chnum{font-family:'Archivo',sans-serif;font-weight:900;font-size:clamp(3.5rem,10vw,7rem);line-height:.8}
+.chcat{font-family:'Archivo',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.24em;font-size:.82rem;opacity:.9}
+.chhead h2{font-weight:800;font-size:clamp(1.7rem,4.4vw,3rem);margin-top:.4rem;max-width:20ch}
+.chbody{padding:clamp(2rem,4vw,3rem) 0 clamp(2.5rem,5vw,3.5rem)}
+.pull{font-family:'Zilla Slab',serif;font-style:italic;font-weight:500;font-size:clamp(1.3rem,2.6vw,1.9rem);line-height:1.26;margin:2rem 0;padding-left:1.3rem;border-left:5px solid currentColor}
+.note{margin:1.8rem 0;padding:1.1rem 1.3rem;background:#fff;border:1px solid rgba(0,0,0,.15);border-left:5px solid currentColor;font-size:1rem;line-height:1.5}
+.note b{font-family:'Archivo',sans-serif;text-transform:uppercase;letter-spacing:.14em;font-size:.72rem;display:block;margin-bottom:.35rem}
+figure{margin:2rem 0}
+figure img{width:100%;aspect-ratio:16/10;object-fit:cover;border:2px solid rgba(0,0,0,.18)}
+figcaption{font-size:.85rem;margin-top:.6rem;opacity:.82}
+figcaption a{color:inherit;text-decoration:underline;text-underline-offset:2px}
+.stat{display:flex;align-items:baseline;gap:.9rem;flex-wrap:wrap;margin:1.8rem 0;font-family:'Archivo',sans-serif;text-transform:uppercase}
+.stat b{font-weight:900;font-size:clamp(2.8rem,7vw,4.4rem);color:var(--green);line-height:1}
+.stat span{font-weight:600;letter-spacing:.05em;font-size:.98rem;max-width:24ch}
+
+/* chapter color themes: head reversed, body tinted */
+.c1 .chhead{background:var(--terra);color:var(--cream)} .c1 .chbody{background:color-mix(in srgb,var(--terra) 7%,var(--cream))} .c1 .fl,.c1 .pull,.c1 .note{color:var(--terra)}
+.c2 .chhead{background:var(--gold);color:var(--ink)} .c2 .chbody{background:color-mix(in srgb,var(--gold) 12%,var(--cream))} .c2 .fl,.c2 .pull,.c2 .note{color:#9a6a00}
+.c3 .chhead{background:var(--pink);color:var(--cream)} .c3 .chbody{background:color-mix(in srgb,var(--pink) 7%,var(--cream))} .c3 .fl,.c3 .pull,.c3 .note{color:var(--pink)}
+.c4 .chhead{background:var(--blue);color:var(--cream)} .c4 .chbody{background:color-mix(in srgb,var(--blue) 7%,var(--cream))} .c4 .fl,.c4 .pull,.c4 .note{color:var(--blue)}
+.c5 .chhead{background:var(--green);color:var(--cream)} .c5 .chbody{background:color-mix(in srgb,var(--green) 8%,var(--cream))} .c5 .fl,.c5 .pull,.c5 .note{color:var(--green)}
+.c6 .chhead{background:var(--ink);color:var(--cream)} .c6 .chbody{background:color-mix(in srgb,var(--terra) 6%,var(--cream))} .c6 .fl,.c6 .pull,.c6 .note{color:var(--terra)} .c6 .chnum{color:var(--pink)}
+
+/* interlude quote */
+.bigq{color:var(--cream)}
+.bigq.green{background:var(--green)} .bigq.terra{background:var(--terra)}
+.bigq .col{padding:clamp(2.5rem,5vw,4rem) 0}
+.bigq .qmark{font-family:'Zilla Slab',serif;font-style:italic;font-weight:600;color:var(--gold);font-size:clamp(3.5rem,9vw,6rem);line-height:.4;display:block}
+.bigq blockquote{font-family:'Zilla Slab',serif;font-style:italic;font-weight:500;font-size:clamp(1.4rem,3.2vw,2.3rem);line-height:1.22;margin-top:.8rem}
+.bigq cite{display:block;margin-top:1.4rem;font-family:'Archivo',sans-serif;font-style:normal;font-weight:700;text-transform:uppercase;letter-spacing:.16em;color:var(--gold);font-size:.85rem}
+
+/* recap grid */
+.recap{background:var(--cream);padding:clamp(3rem,6vw,5rem) 0}
+.recap h2{font-weight:800;font-size:clamp(1.8rem,5vw,3rem);max-width:18ch}
+.recap .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2rem}
+@media(max-width:800px){.recap .grid{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.recap .grid{grid-template-columns:1fr}}
+.rcard{border:2px solid var(--ink);padding:1.3rem;background:#fff}
+.rcard .n{font-family:'Archivo',sans-serif;font-weight:900;font-size:1.8rem;line-height:1}
+.rcard h3{font-weight:800;font-size:1.15rem;margin:.5rem 0 .5rem;text-transform:none;line-height:1.1}
+.rcard p{font-size:.95rem;line-height:1.45}
+.rcard:nth-child(1){border-color:var(--terra)}.rcard:nth-child(1) .n{color:var(--terra)}
+.rcard:nth-child(2){border-color:#b8860b}.rcard:nth-child(2) .n{color:#b8860b}
+.rcard:nth-child(3){border-color:var(--pink)}.rcard:nth-child(3) .n{color:var(--pink)}
+.rcard:nth-child(4){border-color:var(--blue)}.rcard:nth-child(4) .n{color:var(--blue)}
+.rcard:nth-child(5){border-color:var(--green)}.rcard:nth-child(5) .n{color:var(--green)}
+.rcard:nth-child(6){border-color:var(--ink)}.rcard:nth-child(6) .n{color:var(--ink)}
+
+/* conclusion */
+.concl{background:var(--blue);color:var(--cream);padding:clamp(3rem,6vw,5rem) 0;position:relative;overflow:hidden}
+.concl .flag{display:flex;margin-bottom:1.6rem}
+.concl .flag span{width:clamp(40px,6vw,90px);height:clamp(52px,8vw,120px)}
+.concl .kicker{color:var(--gold)}
+.concl h2{font-weight:900;font-size:clamp(2rem,5.5vw,3.6rem);margin:1rem 0 1.4rem;max-width:18ch;color:var(--cream)}
+.concl h2 .hl{color:var(--gold)}
+.concl p{font-size:clamp(1.1rem,1.7vw,1.35rem);color:#dfe6ff;margin-bottom:1.2rem}
+
+/* end cta */
+.endcta{background:var(--cream);padding:clamp(2.5rem,5vw,4rem) 0 clamp(3.5rem,7vw,6rem);text-align:center}
+.endcta .kicker{color:var(--terra)}
+.btnrow{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:1.6rem}
+.btn{font-family:'Archivo',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.12em;font-size:.82rem;padding:.9rem 1.8rem;border-radius:999px;border:2px solid var(--blue);transition:transform .15s,background .18s,color .18s}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:var(--blue);color:var(--cream)}.btn-primary:hover{background:var(--ink);color:var(--cream)}
+.btn-ghost{background:transparent;color:var(--blue)}.btn-ghost:hover{background:var(--blue);color:var(--cream)}
+
+/* footer */
+.foot{background:var(--ink);color:var(--cream);padding:clamp(2.2rem,4vw,3.2rem) 0}
+.foot .in{width:min(1080px,92vw);margin-inline:auto;display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:1.2rem}
+.foot .fb{font-family:'Archivo',sans-serif;font-weight:800;text-transform:uppercase;font-size:clamp(1rem,2.6vw,1.5rem)}
+.foot .fb b{color:var(--gold)}
+.foot .fm{font-family:'Archivo',sans-serif;text-transform:uppercase;letter-spacing:.14em;font-size:.76rem;color:#b9b9b3;text-align:right}
+.foot .strip4{width:min(1080px,92vw);margin:1.6rem auto 0;display:flex;height:8px}
+.foot .strip4 span{flex:1}
+.prog{position:fixed;top:0;left:0;height:4px;background:var(--gold);width:0;z-index:60}
+
+/* ===== textura & folk ===== */
+.niflag{display:inline-block;width:1.2em;height:.72em;vertical-align:baseline;margin-left:.4em;border:1px solid rgba(0,0,0,.2);border-radius:2px;box-shadow:0 1px 2px rgba(0,0,0,.18)}
+body{background-color:#efe4cd;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='46' height='46' viewBox='0 0 46 46'%3E%3Cg fill='none' stroke='rgba(192%2C56%2C28%2C0.12)' stroke-width='1.1'%3E%3Ccircle cx='23' cy='23' r='8'/%3E%3Crect x='15' y='15' width='16' height='16' transform='rotate(45 23 23)'/%3E%3Cpath d='M23 1v8M23 37v8M1 23h8M37 23h8'/%3E%3C/g%3E%3C/svg%3E")}
+.recap,.endcta{background-color:transparent;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='46' height='46' viewBox='0 0 46 46'%3E%3Cg fill='none' stroke='rgba(21%2C54%2C158%2C0.10)' stroke-width='1.1'%3E%3Ccircle cx='23' cy='23' r='8'/%3E%3Crect x='15' y='15' width='16' height='16' transform='rotate(45 23 23)'/%3E%3Cpath d='M23 1v8M23 37v8M1 23h8M37 23h8'/%3E%3C/g%3E%3C/svg%3E")}
+.masthead,.bigq,.concl,.chhead{background-image:repeating-linear-gradient(45deg,rgba(255,255,255,.05) 0 1px,transparent 1px 6px),repeating-linear-gradient(-45deg,rgba(0,0,0,.05) 0 1px,transparent 1px 6px)}
+.chbody{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='46' height='46' viewBox='0 0 46 46'%3E%3Cg fill='none' stroke='rgba(26%2C26%2C26%2C0.05)' stroke-width='1.1'%3E%3Ccircle cx='23' cy='23' r='8'/%3E%3Crect x='15' y='15' width='16' height='16' transform='rotate(45 23 23)'/%3E%3Cpath d='M23 1v8M23 37v8M1 23h8M37 23h8'/%3E%3C/g%3E%3C/svg%3E")}
+.recap,.endcta{position:relative}
+.recap::before,.endcta::before{content:"";position:absolute;top:0;left:0;right:0;height:11px;background:repeating-linear-gradient(90deg,var(--terra) 0 12px,var(--gold) 12px 18px,var(--cream) 18px 22px,var(--green) 22px 34px,var(--gold) 34px 40px,var(--pink) 40px 46px,var(--blue) 46px 58px,var(--cream) 58px 62px)}
+.recap,.endcta{padding-top:clamp(3.2rem,6vw,5rem)!important}
+
+/* ===== flores nacionales (stickers) ===== */
+.niflag{object-fit:cover}
+.flor{position:absolute;z-index:6;width:clamp(84px,9vw,128px);text-align:center;transform:rotate(var(--rot,-8deg));pointer-events:none}
+.florwrap{filter:drop-shadow(0 10px 18px rgba(0,0,0,.28))}
+.flor .bloom{width:100%;height:auto;display:block}
+.flor figcaption{margin-top:.35rem;font-family:'Archivo',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.08em;font-size:.58rem;background:#fff;color:#1a1a1a;display:inline-block;padding:.2rem .5rem;border-radius:2px;box-shadow:0 3px 8px rgba(0,0,0,.25)}
+.florA{top:-30px;right:5%;--rot:9deg}
+.florB{top:6%;right:4%;--rot:-11deg}
+.florC{top:9%;right:5%;--rot:8deg}
+.florD{top:-32px;right:6%;--rot:-9deg}
+.florE{top:38%;right:3%;--rot:10deg}
+.florF{top:auto;bottom:8%;right:3%;--rot:-8deg}
+@media(max-width:760px){.flor{display:none}}
+</style>
+</head>
+<body>
+<div class="prog" id="prog"></div>
+
+<nav class="nav">
+  <div class="in">
+    <span class="brand">NO <b>MINIMAL</b></span>
+    <a class="back" href="America Latina No Es Minimalista.html">← Volver al sitio</a>
+  </div>
+</nav>
+
+<header class="masthead">
+  <div class="blocks"><span style="background:var(--pink)"></span><span style="background:var(--gold);height:clamp(56px,9vw,130px)"></span></div>
+  <div class="col">
+    <p class="kicker">Ensayo · Arquitectura latinoamericana</p>
+    <h1>¿Por qué América Latina <span class="no">no</span> puede ser minimalista?</h1>
+    <p class="standfirst">Una defensa del color, la textura y la casa que nunca termina —contra la idea importada de que menos siempre es más.</p>
+    <div class="byline">
+      <span><b>Arq. Orelio Martinez<img class="niflag" src="images/nicaragua-flag.png" alt="Bandera de Nicaragua"></b></span><span class="dot"></span>
+      <span>AIA Chicago, Illinois · 2026</span><span class="dot"></span>
+      <span>Ensayo · 6 dimensiones</span><span class="dot"></span>
+      <span>Lectura ~14 min</span>
+    </div>
+  </div>
+</header>
+
+<section class="intro article">
+  <figure class="flor florE"><div class="florwrap"><svg class="bloom" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><g fill="#fffdf6" stroke="#e7dcc0" stroke-width="2.4"><g transform="rotate(0 50 50)"><ellipse cx="50" cy="31" rx="13" ry="21" transform="rotate(22 50 31)"/></g><g transform="rotate(72 50 50)"><ellipse cx="50" cy="31" rx="13" ry="21" transform="rotate(22 50 31)"/></g><g transform="rotate(144 50 50)"><ellipse cx="50" cy="31" rx="13" ry="21" transform="rotate(22 50 31)"/></g><g transform="rotate(216 50 50)"><ellipse cx="50" cy="31" rx="13" ry="21" transform="rotate(22 50 31)"/></g><g transform="rotate(288 50 50)"><ellipse cx="50" cy="31" rx="13" ry="21" transform="rotate(22 50 31)"/></g></g><circle cx="50" cy="50" r="13" fill="#f4b400"/><circle cx="50" cy="50" r="6" fill="#e0a200"/></svg></div><figcaption>Sacuanjoche · Nicaragua</figcaption></figure>
+  <div class="col">
+    <p class="lead">El minimalismo se vendió como un lenguaje universal: limpio, neutral, aplicable a cualquier lugar. Pero ningún lenguaje es neutral. Trasladado sin traducción a América Latina, ese ideal de pureza no simplifica: borra.</p>
+    <p><span class="fl">C</span>onfundimos el vacío con elegancia. Y esa idea no nació aquí: llegó empacada en revistas, videos y en el departamento minimalista de alguien en Copenhague. De pronto se volvió la vara con la que medimos todo —nuestras casas, nuestras calles, nuestro gusto—, como si despojar fuera sinónimo de progresar.</p>
+    <p>El problema no es el minimalismo en sí. Como disciplina proyectual tiene una historia rica y respuestas legítimas. El problema es adoptarlo sin pensar, y pretender que sirve igual para cualquier clima, cultura o economía. Eso no es neutralidad: es una hegemonía estética que borra tradiciones tan sofisticadas como la propia, y que confunde la ausencia de recursos con una decisión de diseño.</p>
+    <p>Este ensayo propone una lectura distinta. Recorre seis dimensiones —historia, clima, cultura, economía, urbanismo e identidad— para mostrar que lo que desde afuera se lee como "exceso", "desorden" o "falta de refinamiento" es, en realidad, un sistema. Un modo de construir profundamente lógico, adaptado a su territorio, y con un valor cultural que no deberíamos apurarnos a blanquear.</p>
+    <nav class="toc" aria-label="Índice del ensayo">
+      <div class="top">En este ensayo</div>
+      <ol>
+        <li><a href="#c1"><b>Historia</b><span>· Nacimos de la necesidad</span></a></li>
+        <li><a href="#c2"><b>Clima</b><span>· El trópico se come al muro</span></a></li>
+        <li><a href="#c3"><b>Cultura</b><span>· El color es vida</span></a></li>
+        <li><a href="#c4"><b>Economía</b><span>· Una estética de clase</span></a></li>
+        <li><a href="#c5"><b>Urbanismo</b><span>· La ciudad viva</span></a></li>
+        <li><a href="#c6"><b>Identidad</b><span>· La tercera vía</span></a></li>
+      </ol>
+    </nav>
+  </div>
+</section>
+
+<!-- 01 -->
+<section class="ch c1" id="c1">
+  <div class="chhead"><div class="col in"><span class="chnum">01</span><div><p class="chcat">Historia</p><h2>Nacimos de la necesidad, no de la pureza.</h2></div></div></div>
+  <div class="chbody article"><div class="col">
+    <p>La arquitectura latinoamericana no salió de un manifiesto: salió de la vida. Colonialismo, migración del campo a la ciudad, urbanización acelerada y autoconstrucción moldearon una manera de habitar que nunca fue definitiva. Mientras Europa depuraba la forma en las escuelas, aquí se levantaban barrios enteros a punta de mano propia, fin de semana tras fin de semana.</p>
+    <p>La casa latinoamericana no se "termina": crece. Siempre hay un piso por subir cuando llega un hijo o una nuera, una fachada por repintar, un local que se abre en la planta baja, una varilla que espera —literalmente— el próximo tramo de escalera. Esa varilla saliente que un ojo extranjero lee como abandono es, en realidad, una declaración de futuro: la casa está lista para lo que venga.</p>
+    <p>Esa incompletitud no es un fracaso frente a la forma cerrada del modernismo europeo. Es su opuesto deliberado —aunque nunca lo hayamos declarado como estilo—. Donde el minimalismo busca el objeto acabado, perfecto y detenido en el tiempo, la vivienda popular latinoamericana es proceso: se adapta, se remienda y se reinventa con lo que hay a la mano.</p>
+    <div class="note"><b>Contexto</b>Se estima que una parte enorme del parque construido de la región es autoproducida: hecha por sus propios habitantes, por etapas y sin proyecto formal. No es la excepción; para millones, es la norma.</div>
+    <figure>
+      <img src="images/01-historia.png" alt="Vivienda de ladrillo y concreto expuesto en América Latina.">
+      <figcaption>Materiales expuestos en la vivienda asequible. <a href="https://www.archdaily.com/es/1024323/narrativas-sin-pulir-materiales-expuestos-en-la-vivienda-asequible-de-america-latina" target="_blank" rel="noopener">Fuente: ArchDaily</a></figcaption>
+    </figure>
+    <p class="pull">«La casa inacabada es lo opuesto a la forma cerrada, perfecta y definitiva.»</p>
+  </div></div>
+</section>
+
+<!-- 02 -->
+<section class="ch c2" id="c2">
+  <div class="chhead"><div class="col in"><span class="chnum">02</span><div><p class="chcat">Clima</p><h2>El trópico se come al muro blanco.</h2></div></div></div>
+  <div class="chbody article"><div class="col">
+    <p>El muro liso y blanco es una fantasía de clima templado. En buena parte de la región enfrentamos sol directo casi vertical, hasta 80&nbsp;% de humedad y lluvias que descargan 100&nbsp;mm en cuestión de horas. En esas condiciones, la superficie inmaculada se cubre de moho, salitre y regueros de escorrentía en apenas unos meses.</p>
+    <p>El gran ventanal de vidrio —tótem del minimalismo— tampoco resiste el examen: sin protección solar convierte la casa en un invernadero, dispara el consumo de aire acondicionado y castiga el bolsillo justo donde la energía es más cara. Lo que en una revista nórdica es luz difusa, en el trópico es un horno.</p>
+    <p>Por eso el "detalle" sobra mucho menos de lo que parece. La textura ayuda a que el muro envejezca con dignidad en vez de mancharse de golpe; el alero profundo, la celosía y el quiebrasol regulan el sol y la lluvia sin gastar un peso en electricidad. Son la infraestructura climática que un buen proyecto tropical no puede darse el lujo de eliminar por moda.</p>
+    <div class="note"><b>Clave</b>La sombra es el primer sistema de aire acondicionado. Un alero bien dimensionado hace más por el confort que cualquier fachada de vidrio.</div>
+    <figure>
+      <img src="images/02-clima.png" alt="Fachada con celosía de concreto y aleros profundos.">
+      <figcaption>Celosía de concreto: textura que protege, alero que da sombra. <a href="https://www.instagram.com/p/DWRvUeCFPId/" target="_blank" rel="noopener">Fuente: Instagram</a></figcaption>
+    </figure>
+    <p class="pull">«La textura no es decoración: es protección. El alero no es ornamento: es sombra.»</p>
+  </div></div>
+</section>
+
+<div class="bigq terra">
+  <div class="col">
+    <span class="qmark">“</span>
+    <blockquote>Confundimos el vacío con elegancia. Y esa idea no nació aquí: llegó empacada en revistas, videos y en el departamento minimalista de alguien en Copenhague.</blockquote>
+  </div>
+</div>
+
+<!-- 03 -->
+<section class="ch c3" id="c3">
+  <div class="chhead"><div class="col in"><span class="chnum">03</span><div><p class="chcat">Cultura</p><h2>El color no es exceso: es vida.</h2></div></div></div>
+  <div class="chbody article"><div class="col">
+    <p>En América Latina el ornamento es memoria y la mezcla es riqueza. El color no llegó como capricho decorativo: es la lengua materna de nuestros muros. Viene de los pigmentos prehispánicos, del azulejo colonial, del mercado, de la fiesta y del duelo. Pintar la casa es, muchas veces, el primer gesto de propiedad y orgullo de una familia.</p>
+    <p>De Frida Kahlo y el cobalto de su Casa Azul a Luis Barragán y sus rosas mexicanos, el color en manos de nuestros grandes autores no es relleno: estructura el espacio, dirige la luz, define atmósferas y comunica pertenencia. Un muro rosa mexicano contra un cielo azul no es kitsch: es una decisión arquitectónica precisa.</p>
+    <p>Renunciar a todo eso en nombre de la sobriedad no nos vuelve más elegantes: nos vuelve más mudos. Aquí el color es identidad, pertenencia y, muchas veces, resistencia —una forma de decir que este lugar tiene dueño, historia y voz, y que no piensa desaparecer bajo una capa de blanco roto.</p>
+    <figure>
+      <img src="images/03-cultura.png" alt="Muro rosa mexicano de Luis Barragán.">
+      <figcaption>Rosa mexicano de Barragán, Cuadra San Cristóbal. <a href="https://www.dwell.com/article/luis-barragan-casa-gilardi-cuadra-san-cristobal-8dde56ff" target="_blank" rel="noopener">Fuente: Dwell</a></figcaption>
+    </figure>
+    <p class="pull">«El color no es un lujo importado: es la lengua materna de nuestros muros.»</p>
+  </div></div>
+</section>
+
+<!-- 04 -->
+<section class="ch c4" id="c4">
+  <div class="chhead"><div class="col in"><span class="chnum">04</span><div><p class="chcat">Economía</p><h2>El minimalismo es una estética de clase.</h2></div></div></div>
+  <div class="chbody article"><div class="col">
+    <p>El minimalismo simula sencillez, pero exige una precisión carísima. Sin ornamento que disimule el error, todo tiene que ser perfecto: la junta invisible, el plano continuo, el encuentro milimétrico, el detalle que desaparece. Esa perfección se paga en mano de obra altamente especializada, materiales de tolerancia mínima y un mantenimiento constante para que "la nada" siga impecable.</p>
+    <p>Para la vivienda real —hecha de reparación, adaptación, materiales disponibles y presupuesto ajustado— ese ideal es sencillamente inviable. Una grieta en un muro texturado se lee como carácter; la misma grieta en un plano blanco perfecto se lee como defecto. El minimalismo castiga el desgaste, y el desgaste es la vida cotidiana de la mayoría.</p>
+    <p>Por eso conviene nombrarlo con precisión: lo que se presenta como austeridad moral es, muchas veces, un privilegio económico. Es la estética de quien puede pagar que nada se vea —y de quien no tiene que preocuparse por cómo envejecerá el edificio cuando el presupuesto se acabe.</p>
+    <div class="note"><b>Paradoja</b>Cuanto más "simple" se ve un espacio minimalista bien hecho, más caro suele ser producirlo y sostenerlo. La sencillez visible es un lujo invisible.</div>
+    <figure>
+      <img src="images/04-economia.png" alt="Interior minimalista blanco impecable.">
+      <figcaption>Interior minimalista impecable: la "sencillez" más cara de sostener. Diseño propio.</figcaption>
+    </figure>
+    <p class="pull">«Lo que parece sobrio suele ser, en realidad, lo más caro de sostener.»</p>
+  </div></div>
+</section>
+
+<!-- 05 -->
+<section class="ch c5" id="c5">
+  <div class="chhead"><div class="col in"><span class="chnum">05</span><div><p class="chcat">Urbanismo</p><h2>La ciudad viva, no el orden impuesto.</h2></div></div></div>
+  <div class="chbody article"><div class="col">
+    <p>La transformación urbana más citada de la región no se hizo con vacío ni con blanco. Medellín no cambió a punta de minimalismo, sino con bibliotecas, parques, escuelas, transporte, arte público y símbolos sembrados en las comunas que antes se daban por perdidas. La apuesta fue llevar calidad y belleza justo donde el Estado había estado ausente.</p>
+    <p>El espacio público que dignifica no persigue la nada: persigue el encuentro. Un metrocable que conecta una ladera, una biblioteca que corona un barrio, una fachada pintada por sus propios vecinos: todo eso suma densidad simbólica, no la resta. La ciudad se volvió más segura porque se volvió más habitada y más orgullosa de sí misma.</p>
+    <div class="stat"><b>−90&nbsp;%</b><span>caída de homicidios en cerca de una década, según cifras de la ciudad.</span></div>
+    <p>La lección es clara: el orden que sirve no es el que se impone desde arriba borrando lo que había, sino el que reconoce, colorea y conecta lo que la gente ya construyó. Urbanismo social, no urbanismo de catálogo.</p>
+    <figure>
+      <img src="images/05-urbanismo.png" alt="Comuna de Medellín con casas pintadas de colores.">
+      <figcaption>Comuna de Medellín: color y espacio público, no vacío. <a href="https://www.semana.com/nacion/medellin/articulo/conozca-la-obra-de-arte-mas-grande-de-medellin-que-esta-exhibida-en-manrique/202339/" target="_blank" rel="noopener">Fuente: Semana</a></figcaption>
+    </figure>
+    <p class="pull">«Medellín no se transformó con minimalismo, sino con bibliotecas, color y símbolos.»</p>
+  </div></div>
+</section>
+
+<div class="bigq green">
+  <div class="col">
+    <span class="qmark">“</span>
+    <blockquote>La arquitectura latinoamericana nació desde la necesidad, la autoconstrucción y la improvisación. No es un defecto: es identidad. Es la expresión más honesta de quiénes somos y de cómo hemos construido nuestro mundo con lo que teníamos.</blockquote>
+    <cite>Arq. Orelio Martinez<img class="niflag" src="images/nicaragua-flag.png" alt="Bandera de Nicaragua"></cite>
+  </div>
+</div>
+
+<!-- 06 -->
+<section class="ch c6" id="c6">
+  <div class="chhead"><div class="col in"><span class="chnum">06</span><div><p class="chcat">Identidad</p><h2>Existe una tercera vía.</h2></div></div></div>
+  <div class="chbody article"><div class="col">
+    <p>Rechazar el minimalismo importado no significa refugiarse en el folklore nostálgico, ni fabricar postales de un pasado que ya no existe. Tampoco significa rendirse ante Milán o Tokio y copiar su vocabulario. Existe una tercera vía: la de una arquitectura contemporánea e inconfundiblemente latinoamericana.</p>
+    <p>Luis Barragán, Rogelio Salmona, Lina Bo Bardi, Alejandro Aravena, Simón Vélez y tantos otros ya la trazaron. Su obra es moderna sin dejar de ser de aquí: usa el color, la textura, el ladrillo, la sombra, el patio y el espacio comunitario no como cita pintoresca, sino como material de proyecto de primer nivel, capaz de dialogar de igual a igual con cualquier arquitectura del mundo.</p>
+    <p>Ese es el punto de todo el ensayo. No se trata de elegir entre ser modernos o ser nosotros. Se trata de descubrir —y defender— que podemos ser ambas cosas a la vez: rigurosos y cálidos, contemporáneos y arraigados, austeros cuando conviene y exuberantes cuando el lugar lo pide.</p>
+    <figure>
+      <img src="images/06-identidad.png" alt="SESC Pompéia de Lina Bo Bardi.">
+      <figcaption>SESC Pompéia de Lina Bo Bardi: moderno y de aquí. <a href="https://casacor.abril.com.br/en-US/noticias/arquitetura/sesc-pompeia-25-obras-mais-importantes-do-pos-guerra" target="_blank" rel="noopener">Fuente: CasaCor</a></figcaption>
+    </figure>
+    <p class="pull">«Modernos sin dejar de ser de aquí.»</p>
+  </div></div>
+</section>
+
+<section class="recap">
+  <figure class="flor florF"><div class="florwrap"><svg class="bloom" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><g fill="#8e44ad" stroke="#ffffff" stroke-width="2.4"><g transform="rotate(0 50 50)"><ellipse cx="50" cy="30" rx="14" ry="20" transform="rotate(0 50 30)"/></g><g transform="rotate(72 50 50)"><ellipse cx="50" cy="30" rx="14" ry="20" transform="rotate(0 50 30)"/></g><g transform="rotate(144 50 50)"><ellipse cx="50" cy="30" rx="14" ry="20" transform="rotate(0 50 30)"/></g><g transform="rotate(216 50 50)"><ellipse cx="50" cy="30" rx="14" ry="20" transform="rotate(0 50 30)"/></g><g transform="rotate(288 50 50)"><ellipse cx="50" cy="30" rx="14" ry="20" transform="rotate(0 50 30)"/></g></g><circle cx="50" cy="50" r="11" fill="#6c3483"/><circle cx="50" cy="50" r="5" fill="#f4b400"/></svg></div><figcaption>Orquídea · Colombia</figcaption></figure>
+  <div class="wide">
+    <h2 class="disp">Seis ideas para llevarte.</h2>
+    <div class="grid">
+      <div class="rcard"><div class="n">01</div><h3>La casa nunca termina</h3><p>La incompletitud no es fracaso: es una arquitectura de proceso, lista para crecer con la familia.</p></div>
+      <div class="rcard"><div class="n">02</div><h3>La textura protege</h3><p>Alero, celosía y muro rugoso son infraestructura climática, no adorno prescindible.</p></div>
+      <div class="rcard"><div class="n">03</div><h3>El color comunica</h3><p>Es identidad, pertenencia y resistencia; renunciar a él nos vuelve más mudos, no más elegantes.</p></div>
+      <div class="rcard"><div class="n">04</div><h3>La pureza cuesta</h3><p>El minimalismo bien hecho es carísimo: una estética de clase disfrazada de austeridad.</p></div>
+      <div class="rcard"><div class="n">05</div><h3>La ciudad se habita</h3><p>Medellín cambió con color, cultura y espacio público, no con vacío impuesto desde arriba.</p></div>
+      <div class="rcard"><div class="n">06</div><h3>Hay una tercera vía</h3><p>Contemporáneos e inconfundiblemente latinoamericanos: ni folklore ni copia importada.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="concl">
+  <div class="col">
+    <div class="flag"><span style="background:var(--pink)"></span><span style="background:var(--gold)"></span><span style="background:var(--green)"></span></div>
+    <p class="kicker">Conclusión</p>
+    <h2>América Latina no es minimalista <span class="hl">porque no quiere serlo.</span></h2>
+    <p>Porque nuestra arquitectura, como nuestra música, cuenta historias, mezcla mundos y resiste realidades. El color, la textura y la casa que nunca termina no son defectos que corregir hacia un ideal ajeno: son la prueba de una cultura material viva, inteligente y en diálogo con su territorio.</p>
+    <p>El reto no es despojarnos para parecernos a otros, sino aprender a leer con orgullo lo que ya sabemos hacer. Y eso —justamente eso— es lo que la hace única e irremplazable.</p>
+  </div>
+</section>
+
+<section class="endcta">
+  <div class="col">
+    <p class="kicker">Gracias por leer</p>
+    <div class="btnrow">
+      <a class="btn btn-primary" href="https://drive.google.com/drive/u/0/folders/1bAW4zKSk3QaXWzKezzsazEnKtzBhc-ZJ" target="_blank" rel="noopener">Descargar el PDF</a>
+      <a class="btn btn-ghost" href="America Latina No Es Minimalista.html">Volver al sitio</a>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="in">
+    <div class="fb">Arq. Orelio <b>Martinez</b><img class="niflag" src="images/nicaragua-flag.png" alt="Bandera de Nicaragua"></div>
+    <div class="fm">Ensayo · Arquitectura latinoamericana<br>AIA Chicago, Illinois · 2026</div>
+  </div>
+  <div class="strip4"><span style="background:var(--pink)"></span><span style="background:var(--gold)"></span><span style="background:var(--green)"></span><span style="background:var(--blue)"></span></div>
+</footer>
+
+<script>
+const prog=document.getElementById('prog');
+addEventListener('scroll',()=>{const h=document.documentElement;const p=h.scrollTop/(h.scrollHeight-h.clientHeight||1);prog.style.width=(p*100)+'%';},{passive:true});
+</script>
+</body>
+</html>

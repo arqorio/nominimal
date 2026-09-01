@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://nominimal.vercel.app/sitemap.xml

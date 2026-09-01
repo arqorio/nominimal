@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+  <link rel="canonical" href="https://nominimal.vercel.app/minimalista.html">
+  <meta property="og:url" content="https://nominimal.vercel.app/minimalista.html">
   <title>Por qué América Latina no puede ser minimalista — No Minimal</title>
   <meta name="description" content="Tesis del Arq. Orelio Martínez: el minimalismo como neutralidad importada frente a una identidad latinoamericana hecha de color, mezcla e improvisación.">
   <meta name="author" content="Arq. Orelio Martínez">
@@ -13,9 +15,9 @@
   <meta property="og:type" content="article">
   <meta property="og:title" content="Por qué América Latina no puede ser minimalista — No Minimal">
   <meta property="og:description" content="Tesis del Arq. Orelio Martínez: el minimalismo como neutralidad importada frente a una identidad latinoamericana hecha de color, mezcla e improvisación.">
-  <meta property="og:image" content="og-image.png">
+  <meta property="og:image" content="https://nominimal.vercel.app/og-image.png">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="og-image.png">
+  <meta name="twitter:image" content="https://nominimal.vercel.app/og-image.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@500;600;700;800;900&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&family=Zilla+Slab:ital,wght@0,500;0,700;1,500;1,700&display=swap" rel="stylesheet">
@@ -23,6 +25,21 @@
   *{box-sizing:border-box;}
   html,body{margin:0;padding:0;scroll-behavior:smooth;}
   body{background:#0c1c56;color:#1a1a1a;font-family:'Archivo',sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+  html{overflow-x:hidden}
+  @media (max-width:640px){
+    .nm-doc-nav{padding:10px 14px!important;gap:10px!important}
+    .nm-doc-nav > a:first-child span[style*="font-size:1.3rem"]{font-size:1.05rem!important}
+    .nm-doc-nav > div{gap:8px!important}
+    .nm-doc-nav > div a{padding:8px 12px!important;font-size:.72rem!important}
+    .nm-crumb li:last-child{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
+    .hero-wrap{padding:26px 16px 30px!important}
+    .doc{margin:20px 12px!important;padding:24px 18px!important;border-width:3px!important;box-shadow:8px 10px 0 rgba(0,0,0,.4)!important}
+    .doc h2{padding-left:12px!important;border-left-width:6px!important}
+  }
+  @media (max-width:400px){
+    .nm-doc-nav{flex-wrap:wrap!important}
+  }
+
   a{color:#0f4bd1;text-decoration:none;}
   a:hover{color:#e5147d;}
   ::selection{background:#f4b81f;color:#1a1a1a;}
@@ -38,12 +55,14 @@
   .doc ul.refs{list-style:none;margin:.8em 0 0;padding:0;}
   .doc ul.refs li{padding-left:1.2em;text-indent:-1.2em;}
 </style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Por qué América Latina no puede ser minimalista","description":"Tesis del Arq. Orelio Martínez: el minimalismo como neutralidad importada frente a una identidad latinoamericana hecha de color, mezcla e improvisación.","inLanguage":"es","image":"https://nominimal.vercel.app/og-image.png","mainEntityOfPage":"https://nominimal.vercel.app/minimalista.html","author":{"@type":"Person","name":"Arq. Orelio Martínez"},"publisher":{"@type":"Person","name":"Arq. Orelio Martínez"},"isPartOf":{"@type":"WebSite","name":"No Minimal","url":"https://nominimal.vercel.app/"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://nominimal.vercel.app/"},{"@type":"ListItem","position":2,"name":"Por qué América Latina no puede ser minimalista","item":"https://nominimal.vercel.app/minimalista.html"}]}</script>
 </head>
 <body>
 <div style="min-height:100vh;">
   <header style="position:sticky;top:0;z-index:60;background:#15369e;border-bottom:5px solid #f4b400;">
     <div style="height:6px;background:repeating-linear-gradient(90deg,#e5147d 0 16px,#f4b81f 16px 32px,#12b6ad 32px 48px,#4faa2e 48px 64px);"></div>
-    <div style="max-width:1240px;margin:0 auto;padding:12px 22px;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;">
+    <div style="max-width:1240px;margin:0 auto;padding:12px 22px;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;" class="nm-doc-nav">
       <a href="index.html" style="display:flex;align-items:center;gap:11px;">
         <span style="display:flex;gap:3px;"><span style="width:13px;height:26px;background:#e0197f;"></span><span style="width:13px;height:26px;background:#f4b400;"></span><span style="width:13px;height:26px;background:#2c6e49;"></span></span>
         <span style="font-family:'Archivo',sans-serif;font-weight:900;color:#f2e7d3;font-size:1.3rem;line-height:1;">NO MINIMAL</span>
@@ -55,9 +74,17 @@
     </div>
   </header>
 
+  <nav aria-label="Ruta de navegación" class="nm-crumb" style="background:#15369e;border-bottom:1px solid rgba(242,231,211,.15);">
+    <ol style="list-style:none;display:flex;align-items:center;gap:8px;max-width:1240px;margin:0 auto;padding:10px 22px;flex-wrap:nowrap;overflow:hidden;font-family:'Archivo',sans-serif;font-weight:700;font-size:.78rem;letter-spacing:.03em;color:rgba(242,231,211,.75);">
+      <li><a href="index.html" style="color:rgba(242,231,211,.75);">Inicio</a></li>
+      <li aria-hidden="true" style="color:#f4b400;">/</li>
+      <li aria-current="page" style="color:#f2e7d3;">Por qué América Latina no puede ser minimalista</li>
+    </ol>
+  </nav>
+
   <section style="position:relative;overflow:hidden;color:#f2e7d3;background:#15369e;">
     <div style="position:absolute;inset:0;opacity:.5;background-image:radial-gradient(circle at 85% 25%,rgba(224,25,127,.4) 0 6px,transparent 7px);background-size:66px 66px;pointer-events:none;"></div><div style="position:absolute;top:0;right:0;width:min(26vw,240px);height:min(26vw,240px);background:linear-gradient(135deg,#e0197f 0 50%,transparent 50%);pointer-events:none;"></div>
-    <div style="position:relative;max-width:722px;margin:0 auto;padding:clamp(32px,5vw,60px) 22px clamp(40px,5vw,64px);">
+    <div style="position:relative;max-width:722px;margin:0 auto;padding:clamp(32px,5vw,60px) 22px clamp(40px,5vw,64px);" class="hero-wrap">
       <p style="font-family:'Archivo',sans-serif;font-weight:800;letter-spacing:.22em;text-transform:uppercase;font-size:.78rem;color:#f4b400;margin:0 0 18px;">Documento completo · Serie Temas de Arquitectura</p>
       <h1 style="font-family:'Anton',sans-serif;line-height:.9;letter-spacing:.005em;text-transform:uppercase;font-size:clamp(2.3rem,6.6vw,4.4rem);margin:0;text-wrap:balance;">¿Por qué América Latina <span style="color:#f4b400;">NO</span> puede ser minimalista?</h1>
       <p style="font-family:'Zilla Slab',serif;font-style:italic;font-weight:500;font-size:clamp(1.05rem,2.2vw,1.4rem);line-height:1.4;max-width:48ch;margin:22px 0 0;opacity:.95;text-wrap:pretty;">Análisis histórico, climático, cultural y económico de la identidad arquitectónica latinoamericana y su incompatibilidad estructural con el minimalismo global.</p>

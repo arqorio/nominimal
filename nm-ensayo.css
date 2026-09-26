@@ -1,0 +1,181 @@
+/* ==========================================================================
+   NO MINIMAL — capa comun de los ensayos
+   Indice de capitulos, progreso de lectura, bandas tejidas entre capitulos,
+   letra capital y "sigue leyendo". Cada ensayo elige su motivo con
+   <body data-tema="...">.
+   ========================================================================== */
+
+:root{
+  --pat-greca: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E %3Cg fill='none' stroke='black' stroke-width='6' stroke-linecap='square'%3E %3Cpath d='M0 45h48M9 45V9h30v24H21V21h12'/%3E%3C/g%3E%3C/svg%3E");
+  --pat-chakana: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 60'%3E %3Cpath fill='black' d='M24 0h12v12h12v12h12v12H48v12H36v12H24V48H12V36H0V24h12V12h12z'/%3E%3C/svg%3E");
+  --pat-rombos: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E %3Cg fill='black'%3E %3Cpath fill-rule='evenodd' d='M20 1 39 20 20 39 1 20zM20 10 30 20 20 30 10 20z'/%3E %3Cpath d='M0 0 6 0 0 6zM40 0 34 0 40 6zM0 40 6 40 0 34zM40 40 34 40 40 34z'/%3E %3C/g%3E%3C/svg%3E");
+  --pat-talavera: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 60'%3E %3Cg fill='black'%3E%3Cg transform='translate%2830 30%29'%3E%3Cg transform='rotate%280%29'%3E%3Cellipse cx='0' cy='-15' rx='5' ry='9'/%3E%3C/g%3E%3Cg transform='rotate%2845%29'%3E%3Cellipse cx='0' cy='-15' rx='5' ry='9'/%3E%3C/g%3E%3Cg transform='rotate%2890%29'%3E%3Cellipse cx='0' cy='-15' rx='5' ry='9'/%3E%3C/g%3E%3Cg transform='rotate%28135%29'%3E%3Cellipse cx='0' cy='-15' rx='5' ry='9'/%3E%3C/g%3E%3Cg transform='rotate%28180%29'%3E%3Cellipse cx='0' cy='-15' rx='5' ry='9'/%3E%3C/g%3E%3Cg transform='rotate%28225%29'%3E%3Cellipse cx='0' cy='-15' rx='5' ry='9'/%3E%3C/g%3E%3Cg transform='rotate%28270%29'%3E%3Cellipse cx='0' cy='-15' rx='5' ry='9'/%3E%3C/g%3E%3Cg transform='rotate%28315%29'%3E%3Cellipse cx='0' cy='-15' rx='5' ry='9'/%3E%3C/g%3E%3Ccircle r='6'/%3E%3C/g%3E %3Ccircle cx='0' cy='0' r='7'/%3E%3Ccircle cx='60' cy='0' r='7'/%3E %3Ccircle cx='0' cy='60' r='7'/%3E%3Ccircle cx='60' cy='60' r='7'/%3E%3C/g%3E%3C/svg%3E");
+  --pat-mola: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E %3Cg fill='none' stroke='black' stroke-width='4'%3E %3Crect x='5' y='5' width='38' height='38' rx='12'/%3E %3Crect x='16' y='16' width='16' height='16' rx='6'/%3E%3C/g%3E %3Cg fill='black'%3E%3Ccircle cx='24' cy='24' r='2.5'/%3E %3Ccircle cx='5' cy='5' r='2'/%3E%3Ccircle cx='43' cy='5' r='2'/%3E %3Ccircle cx='5' cy='43' r='2'/%3E%3Ccircle cx='43' cy='43' r='2'/%3E%3C/g%3E%3C/svg%3E");
+  --pat-celosia: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cpath fill='black' fill-rule='evenodd' d='M0 0h40v40H0zM12 12A8 8 0 0 1 28 12A8 8 0 0 1 28 28A8 8 0 0 1 12 28A8 8 0 0 1 12 12z'/%3E%3C/svg%3E");
+}
+
+/* ---------------------------------------------------------------- temas */
+body[data-tema="ladrillo"]{--acento:#c0381c;--acento-txt:#a8301a;--acento2:#f4b81f;--oscuro:#611607;
+  --pat:var(--pat-greca);--pat-tam:30px}
+body[data-tema="color"]{--acento:#e5147d;--acento-txt:#b80f63;--acento2:#f4b81f;--oscuro:#0c1c56;
+  --pat:var(--pat-talavera);--pat-tam:34px}
+body[data-tema="minimalista"]{--acento:#0f4bd1;--acento-txt:#0f4bd1;--acento2:#e5147d;--oscuro:#0c1c56;
+  --pat:var(--pat-chakana);--pat-tam:30px}
+body[data-tema="patio"]{--acento:#12b6ad;--acento-txt:#0a7771;--acento2:#f4b81f;--oscuro:#08222e;
+  --pat:var(--pat-rombos);--pat-tam:30px}
+
+/* ------------------------------------------------- el texto, con tema */
+.doc h2{border-left-color:var(--acento)!important}
+.doc h3{color:var(--acento-txt)}
+.doc p.eyb{color:var(--acento-txt)}
+.doc h2,.doc p.eyb{scroll-margin-top:96px}
+/* Las URLs largas de las fuentes se salian de la pantalla del telefono. */
+.doc a{overflow-wrap:anywhere}
+
+/* Letra capital: la primera letra del ensayo, como en los libros. */
+.doc p.nm-capitular::first-letter{
+  font-family:'Anton',sans-serif;float:left;font-size:4.4em;line-height:.8;
+  padding:.07em .1em 0 0;margin:.02em .06em 0 0;color:var(--acento);
+  text-shadow:.045em .045em 0 var(--acento2)}
+
+/* Banda tejida entre capitulos: el motivo del ensayo, en su color. */
+.nm-banda{height:var(--pat-tam);margin:3.4em 0 2.4em;background:var(--acento);opacity:.9;
+  -webkit-mask-image:var(--pat);mask-image:var(--pat);
+  -webkit-mask-size:auto var(--pat-tam);mask-size:auto var(--pat-tam);
+  -webkit-mask-repeat:repeat-x;mask-repeat:repeat-x;
+  -webkit-mask-position:center;mask-position:center}
+
+/* Tiempo de lectura bajo el autor. */
+.nm-lectura{display:inline-flex;align-items:center;gap:10px;font-family:'Archivo',sans-serif;
+  font-weight:800;font-size:.9rem;letter-spacing:.02em;color:#f2e7d3;
+  background:rgba(12,20,56,.42);border:2px solid rgba(242,231,211,.35);
+  padding:9px 16px;border-radius:999px}
+.nm-lectura b{color:var(--acento2)}
+
+/* ------------------------------------------------------ barra de progreso */
+#nm-progreso{position:fixed;top:0;left:0;height:5px;width:0;z-index:100;pointer-events:none;
+  background:linear-gradient(90deg,#e5147d,#f4b81f,#12b6ad,#4faa2e);
+  box-shadow:0 0 10px rgba(244,184,31,.55);transition:width .1s linear}
+
+/* ----------------------------------------------------------------- indice */
+#nm-velo{position:fixed;inset:0;z-index:88;background:rgba(6,10,30,.58);opacity:0;
+  pointer-events:none;transition:opacity .3s ease}
+#nm-velo.abierto{opacity:1;pointer-events:auto}
+
+#nm-indice{position:fixed;z-index:90;left:0;right:0;bottom:0;max-height:80vh;overflow:auto;
+  overscroll-behavior:contain;background:#fbf3df;color:#221d12;
+  border-top:7px solid var(--acento2);border-radius:24px 24px 0 0;
+  box-shadow:0 -14px 40px rgba(0,0,0,.35);padding:0 14px 26px;
+  transform:translateY(105%);transition:transform .38s cubic-bezier(.2,.7,.2,1);visibility:hidden}
+#nm-indice.abierto{transform:none;visibility:visible}
+.nm-ind-cab{position:sticky;top:0;display:flex;align-items:center;justify-content:space-between;
+  background:#fbf3df;padding:16px 4px 12px;border-bottom:2px solid rgba(34,29,18,.12);margin-bottom:8px;z-index:1}
+.nm-ind-cab strong{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;
+  font-size:1.5rem;letter-spacing:.02em;color:var(--oscuro)}
+.nm-ind-cab strong span{color:var(--acento-txt)}
+.nm-ind-cerrar{width:46px;height:46px;border-radius:50%;border:0;cursor:pointer;
+  background:var(--oscuro);color:#fbf3df;font-size:1.5rem;line-height:1}
+#nm-indice ol{list-style:none;margin:0;padding:0;counter-reset:cap}
+#nm-indice a{display:block;padding:12px 14px;border-radius:12px;color:#2a2418;
+  font-family:'Archivo',sans-serif;font-weight:700;font-size:1rem;line-height:1.28;min-height:44px}
+#nm-indice a:hover{background:rgba(34,29,18,.06);color:#2a2418}
+#nm-indice a .ojo{display:block;font-family:'Anton',sans-serif;font-weight:400;font-size:.76rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--acento-txt);margin-bottom:3px}
+#nm-indice a.activo{background:var(--acento);color:#fff;box-shadow:4px 4px 0 var(--acento2)}
+#nm-indice a.activo .ojo{color:rgba(255,255,255,.85)}
+
+#nm-indice-btn{position:fixed;z-index:85;left:14px;bottom:16px;min-height:50px;padding:0 20px 0 16px;
+  display:flex;align-items:center;gap:10px;border-radius:999px;cursor:pointer;
+  background:var(--oscuro);color:#fbf3df;border:3px solid var(--acento2);
+  font-family:'Archivo',sans-serif;font-weight:800;font-size:.95rem;letter-spacing:.03em;
+  box-shadow:0 8px 20px rgba(0,0,0,.35);transform:translateY(130%);transition:transform .35s ease}
+#nm-indice-btn.se-ve{transform:none}
+#nm-indice-btn .ico{width:20px;height:20px;background:var(--acento2);
+  -webkit-mask:var(--pat-chakana) center/contain no-repeat;mask:var(--pat-chakana) center/contain no-repeat}
+#nm-indice-btn small{font-weight:700;opacity:.75;font-size:.8rem}
+
+/* En pantallas anchas el indice vive a la izquierda del texto, siempre a mano. */
+@media (min-width:1280px){
+  #nm-indice{top:120px;bottom:auto;right:auto;left:max(16px,calc(50% - 380px - 292px));width:262px;
+    max-height:calc(100vh - 150px);border:3px solid var(--acento2);border-radius:18px;
+    box-shadow:10px 12px 0 rgba(0,0,0,.35);padding:0 10px 14px;transform:none;
+    opacity:0;visibility:hidden;transition:opacity .3s ease,visibility .3s}
+  #nm-indice.fijo{opacity:1;visibility:visible}
+  #nm-indice a{font-size:.9rem;padding:9px 11px;min-height:0}
+  .nm-ind-cab{padding:14px 4px 10px}
+  .nm-ind-cab strong{font-size:1.2rem}
+  .nm-ind-cerrar,#nm-indice-btn,#nm-velo{display:none!important}
+}
+
+/* ----------------------------------------------------------- volver arriba */
+#nm-arriba{position:fixed;z-index:85;right:14px;bottom:16px;width:52px;height:52px;border:0;padding:0;
+  cursor:pointer;display:grid;place-items:center;border-radius:50%;
+  background:var(--acento2);color:var(--oscuro);box-shadow:0 8px 20px rgba(0,0,0,.35);
+  opacity:0;transform:translateY(14px) scale(.9);pointer-events:none;
+  transition:opacity .3s ease,transform .3s ease}
+#nm-arriba.se-ve{opacity:1;transform:none;pointer-events:auto}
+#nm-arriba svg{width:24px;height:24px}
+#nm-arriba:focus-visible,#nm-indice-btn:focus-visible,.nm-ind-cerrar:focus-visible,
+#nm-indice a:focus-visible{outline:3px solid var(--acento);outline-offset:3px}
+
+/* ------------------------------------------------------------ sigue leyendo */
+.nm-sigue{position:relative;overflow:hidden;background:#0c1c56;color:#fbf3df;
+  padding:clamp(48px,7vw,84px) 22px clamp(56px,8vw,96px)}
+.nm-sigue::before{content:'';position:absolute;inset:0;background:#f4b81f;opacity:.07;
+  -webkit-mask:var(--pat-chakana) 0 0/60px 60px repeat;mask:var(--pat-chakana) 0 0/60px 60px repeat}
+.nm-sigue > *{position:relative}
+.nm-sigue-cab{max-width:1080px;margin:0 auto 34px}
+.nm-sigue-cab p{margin:0 0 10px;font-family:'Archivo',sans-serif;font-weight:800;font-size:.8rem;
+  letter-spacing:.2em;text-transform:uppercase;color:#f4b81f}
+.nm-sigue-cab h2{margin:0;font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;
+  font-size:clamp(2.1rem,5.4vw,3.6rem);line-height:.92;text-shadow:4px 5px 0 rgba(0,0,0,.35)}
+.nm-tarjetas{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1080px;margin:0 auto}
+.nm-tarjeta{display:flex;flex-direction:column;background:#fbf3df;color:#221d12;overflow:hidden;
+  border:4px solid var(--c);border-radius:50% 50% 18px 18px / 120px 120px 18px 18px;
+  box-shadow:10px 12px 0 rgba(0,0,0,.35);transition:transform .45s cubic-bezier(.2,.7,.2,1)}
+.nm-tarjeta:hover{transform:translateY(-8px) rotate(-.6deg);color:#221d12}
+.nm-tarjeta .arcada{position:relative;height:150px;background:var(--f)}
+.nm-tarjeta .arcada span{position:absolute;inset:0;background:var(--c);
+  -webkit-mask-image:var(--p);mask-image:var(--p);-webkit-mask-size:56px 56px;mask-size:56px 56px}
+.nm-tarjeta .cuerpo{padding:20px 22px 24px;display:flex;flex-direction:column;gap:10px;flex:1}
+.nm-tarjeta h3{margin:0;font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;
+  font-size:1.55rem;line-height:1;color:#111}
+.nm-tarjeta p{margin:0;font-size:1rem;line-height:1.45;color:#4a4038}
+.nm-tarjeta .meta{margin-top:auto;padding-top:8px;display:flex;justify-content:space-between;
+  align-items:center;font-family:'Archivo',sans-serif;font-weight:800;font-size:.9rem}
+.nm-tarjeta .meta b{background:var(--c);color:#fff;padding:9px 16px;border-radius:999px}
+
+@media (max-width:860px){
+  .nm-tarjetas{grid-template-columns:1fr;gap:20px}
+  .nm-tarjeta{flex-direction:row;border-radius:90px 18px 18px 90px}
+  .nm-tarjeta .arcada{flex:0 0 96px;height:auto}
+  .nm-tarjeta h3{font-size:1.3rem}
+}
+
+/* ------------------------------------------------------------- movil */
+@media (max-width:640px){
+  /* Cabecera en una sola fila: el logo ya lleva al inicio (y las migas
+     tambien), asi que "← Inicio" sobra y empujaba el PDF a otra linea. */
+  .nm-doc-nav{flex-wrap:nowrap!important}
+  .nm-doc-nav > div a[href="index.html"]{display:none!important}
+  .nm-doc-nav > div a{min-height:44px;display:inline-flex!important;align-items:center;white-space:nowrap}
+  /* El triangulo amarillo de la portada tapaba el antetitulo. */
+  section > div[style*="linear-gradient(135deg"]{width:54px!important;height:54px!important}
+  .hero-wrap > p:first-child{padding-right:44px}
+  .doc{margin:16px 8px!important;padding:28px 18px!important}
+  .nm-banda{margin:2.8em 0 2em}
+  .nm-lectura{font-size:.82rem}
+  /* que el ultimo parrafo no quede bajo los botones flotantes */
+  .doc{margin-bottom:84px!important}
+  /* areas tactiles de al menos 44 px */
+  .nm-doc-nav > a:first-child{min-height:44px}
+  .nm-crumb a{display:inline-block;padding:13px 0}
+  footer a{display:inline-flex;align-items:center;min-height:44px}
+}
+
+@media (prefers-reduced-motion:reduce){
+  #nm-indice,#nm-velo,#nm-indice-btn,#nm-arriba,.nm-tarjeta,#nm-progreso{transition:none!important}
+}
+@media print{
+  #nm-progreso,#nm-indice,#nm-indice-btn,#nm-velo,#nm-arriba,.nm-sigue,.nm-banda{display:none!important}
+}

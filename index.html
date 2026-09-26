@@ -268,6 +268,112 @@
   #arriba svg{width:24px;height:24px;display:block}
   @media (max-width:560px){ #arriba{right:12px;bottom:14px;width:46px;height:46px} }
 </style>
+
+<style>
+/* ==========================================================================
+   Etapa 4 — movil de verdad, biblioteca de ensayos y pie de pagina
+   ========================================================================== */
+  /* ---- boton de menu (solo movil) ---- */
+  .nm-menu-btn{display:none;align-items:center;gap:9px;min-height:44px;padding:0 16px 0 13px;
+    border:2px solid var(--maiz);border-radius:999px;background:transparent;color:var(--crema);
+    font:800 13px/1 'Archivo',sans-serif;letter-spacing:.1em;text-transform:uppercase;cursor:pointer}
+  .nm-menu-btn .ico{width:18px;height:18px;background:var(--maiz);
+    -webkit-mask:var(--pat-chakana) center/contain no-repeat;mask:var(--pat-chakana) center/contain no-repeat}
+  .nm-nav nav a.activo{color:var(--maiz)!important;box-shadow:inset 0 -3px 0 var(--maiz)}
+  .nm-nav nav a{padding:6px 0}
+
+  /* ---- menu a pantalla completa ---- */
+  #nm-menu{position:fixed;inset:0;z-index:80;overflow:auto;overscroll-behavior:contain;
+    padding:0 18px 36px;background:
+      radial-gradient(90% 60% at 100% 0%, rgba(229,20,125,.45), transparent 60%),
+      radial-gradient(80% 60% at 0% 100%, rgba(18,182,173,.35), transparent 60%),#0c1c56;
+    animation:menuEntra .32s cubic-bezier(.2,.7,.2,1)}
+  #nm-menu[hidden]{display:none}
+  @keyframes menuEntra{from{opacity:0;transform:translateY(-12px)}to{opacity:1;transform:none}}
+  .nm-menu-cab{position:sticky;top:0;display:flex;align-items:center;justify-content:space-between;
+    padding:14px 0;background:#0c1c56;border-bottom:3px solid var(--maiz);margin:0 -18px 18px;padding-left:18px;padding-right:18px}
+  .nm-menu-marca{font-family:'Anton',sans-serif;font-size:22px;letter-spacing:.04em;color:var(--maiz)}
+  .nm-menu-cerrar{width:48px;height:48px;border-radius:50%;border:0;cursor:pointer;
+    background:var(--maiz);color:#0c1c56;font-size:28px;line-height:1}
+  .nm-menu-secciones{display:flex;flex-direction:column;gap:10px}
+  .nm-menu-secciones a{display:flex;align-items:center;gap:16px;min-height:66px;padding:10px 14px;
+    background:rgba(251,243,223,.06);border-left:8px solid var(--c);border-radius:0 16px 16px 0;color:var(--crema)}
+  .nm-menu-secciones a:hover,.nm-menu-secciones a:focus-visible{background:rgba(251,243,223,.13);color:var(--crema)}
+  .nm-menu-secciones .n{font-family:'Anton',sans-serif;font-size:22px;color:var(--c);min-width:30px}
+  .nm-menu-secciones .t{font-family:'Anton',sans-serif;font-size:30px;line-height:1;text-transform:uppercase}
+  .nm-menu-secciones small{display:block;font-family:'Archivo',sans-serif;font-size:13px;font-weight:700;
+    letter-spacing:.08em;opacity:.7;margin-top:5px}
+  .nm-menu-sub{margin:28px 0 10px;font-weight:800;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--maiz)}
+  .nm-menu-ensayos{display:flex;flex-direction:column;gap:8px}
+  .nm-menu-ensayos a{display:flex;justify-content:space-between;align-items:center;gap:12px;min-height:52px;
+    padding:10px 16px;border-radius:14px;background:var(--crema);color:#221d12;font-weight:800;font-size:15px;
+    line-height:1.25;border-bottom:5px solid var(--c)}
+  .nm-menu-ensayos a span{flex:0 0 auto;font-size:12px;color:#6b5f52}
+  .nm-menu-ensayos a:hover{color:#221d12}
+  #nm-menu a:focus-visible,.nm-menu-cerrar:focus-visible,.nm-menu-btn:focus-visible{outline:3px solid var(--turquesa);outline-offset:3px}
+
+  /* ---- biblioteca de ensayos ---- */
+  .lib{margin-top:44px;display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+  .lib-tarjeta{display:flex;flex-direction:column;background:#fff8e8;color:#221d12;overflow:hidden;
+    border:4px solid var(--c);border-radius:50% 50% 18px 18px / 110px 110px 18px 18px;
+    box-shadow:10px 12px 0 rgba(12,28,86,.16);transition:transform .45s cubic-bezier(.2,.7,.2,1),box-shadow .45s}
+  .lib-tarjeta:hover{transform:translateY(-8px) rotate(-.6deg);box-shadow:14px 18px 0 rgba(12,28,86,.2);color:#221d12}
+  .lib-tarjeta .arcada{position:relative;height:170px;background:var(--f)}
+  .lib-tarjeta .arcada span{position:absolute;inset:0;background:var(--c);
+    -webkit-mask-image:var(--p);mask-image:var(--p);-webkit-mask-size:58px 58px;mask-size:58px 58px}
+  .lib-tarjeta .arcada b{position:absolute;left:50%;bottom:-2px;transform:translateX(-50%);
+    font-family:'Anton',sans-serif;font-weight:400;font-size:26px;background:#fff8e8;color:var(--c);
+    padding:6px 16px 2px;border-radius:14px 14px 0 0}
+  .lib-tarjeta .cuerpo{padding:18px 20px 22px;display:flex;flex-direction:column;gap:10px;flex:1}
+  .lib-tarjeta h3{margin:0;font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;
+    font-size:24px;line-height:1.02;color:#111}
+  .lib-tarjeta p{margin:0;font-size:15px;line-height:1.45;font-weight:600;color:#5a4e42}
+  .lib-tarjeta .meta{margin-top:auto;padding-top:10px;display:flex;justify-content:space-between;align-items:center;
+    gap:8px;font-weight:800;font-size:13px;color:#6b5f52}
+  .lib-tarjeta .meta em{font-style:normal;background:var(--c);color:#fff;padding:10px 16px;border-radius:999px;white-space:nowrap}
+
+  /* ---- pie ---- */
+  .nm-pie{position:relative;z-index:2;background:rgba(12,20,56,.55);color:rgba(251,243,223,.85);padding:44px 40px 26px}
+  .nm-pie-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:34px}
+  .nm-pie .marca{font-family:'Anton',sans-serif;font-size:30px;color:var(--maiz);letter-spacing:.04em}
+  .nm-pie p{margin:10px 0 0;font-size:15px;line-height:1.5;font-weight:600}
+  .nm-pie .autor{font-size:13px;opacity:.75}
+  .nm-pie h3{margin:0 0 10px;font-size:12px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--maiz)}
+  .nm-pie nav a{display:block;color:var(--crema);font-weight:700;font-size:15px;padding:7px 0}
+  .nm-pie nav a:hover{color:var(--maiz)}
+  .nm-pie-fin{max-width:1200px;margin:34px auto 0!important;padding-top:18px;border-top:1px solid rgba(251,243,223,.18);
+    font-size:13px!important;opacity:.7;text-align:center}
+
+  /* ---- tablet ---- */
+  @media (max-width:1100px){ .lib{grid-template-columns:repeat(2,1fr)} }
+
+  /* ---- movil ---- */
+  @media (max-width:900px){
+    .nm-nav nav{display:none!important}
+    .nm-menu-btn{display:inline-flex}
+    .nm-pie-grid{grid-template-columns:1fr 1fr}
+    .nm-pie-marca{grid-column:1/-1}
+    .nm-pie{padding:40px 18px 24px}
+    #ensayos{padding-left:18px!important;padding-right:18px!important}
+  }
+  @media (max-width:640px){
+    .paleta{grid-template-columns:repeat(2,1fr)!important}
+    .k-extra{display:none}
+    [data-k-track]{height:42px!important}
+    [data-k-thumb]{width:26px!important;height:58px!important}
+    .lib{grid-template-columns:1fr;gap:18px}
+    .lib-tarjeta{flex-direction:row;border-radius:80px 18px 18px 80px}
+    .lib-tarjeta .arcada{flex:0 0 92px;height:auto;min-height:150px}
+    .lib-tarjeta .arcada b{left:auto;right:-2px;bottom:50%;transform:translateY(50%);
+      border-radius:12px 0 0 12px;padding:6px 8px 4px 10px;font-size:20px}
+    .lib-tarjeta h3{font-size:21px}
+    .lib-tarjeta p{font-size:14px}
+    .nm-pie-grid{grid-template-columns:1fr}
+    .nm-pie nav a{padding:13px 0}
+    .nm-nav > a:first-child{display:inline-block;padding:6px 0}
+  }
+  @media (prefers-reduced-motion:reduce){ #nm-menu{animation:none} .lib-tarjeta{transition:none} }
+</style>
 </head>
 <body>
 <div id="progreso" aria-hidden="true"></div>
@@ -283,9 +389,32 @@
       <a style="color:var(--crema)" href="#luz">Luz &amp; sombra</a>
       <a style="color:var(--crema)" href="#cultura">Cultura</a>
       <a style="color:var(--crema)" href="#patio">Patio</a>
+      <a style="color:var(--crema)" href="#ensayos">Ensayos</a>
       <a style="color:var(--crema)" href="#manifiesto">Manifiesto</a>
     </nav>
+    <button type="button" class="nm-menu-btn" aria-expanded="false" aria-controls="nm-menu">
+      <span class="ico" aria-hidden="true"></span>Menú</button>
   </div>
+  <!-- ===== MENU MOVIL ===== -->
+  <div id="nm-menu" role="dialog" aria-modal="true" aria-label="Menú" hidden>
+    <div class="nm-menu-cab"><span class="nm-menu-marca">NO MINIMAL</span><button type="button" class="nm-menu-cerrar" aria-label="Cerrar menú">×</button></div>
+    <nav class="nm-menu-secciones" aria-label="Secciones">
+      <a href="#construccion" style="--c:#c0381c"><span class="n">01</span><span class="t">Construcción<small>El ladrillo</small></span></a>
+      <a href="#luz" style="--c:#e8a11f"><span class="n">02</span><span class="t">Luz y sombra<small>Hora dorada</small></span></a>
+      <a href="#cultura" style="--c:#e5147d"><span class="n">03</span><span class="t">Cultura<small>El color</small></span></a>
+      <a href="#patio" style="--c:#12b6ad"><span class="n">04</span><span class="t">Patio<small>Agua y sombra</small></span></a>
+      <a href="#ensayos" style="--c:#f4b81f"><span class="n">05</span><span class="t">Los ensayos<small>La obra completa</small></span></a>
+      <a href="#manifiesto" style="--c:#fbf3df"><span class="n">06</span><span class="t">Manifiesto<small>El cierre</small></span></a>
+    </nav>
+    <p class="nm-menu-sub">Lee los ensayos</p>
+    <nav class="nm-menu-ensayos" aria-label="Ensayos">
+      <a href="ladrillo.html" style="--c:#c0381c">El ladrillo como lengua materna <span>≈ 16 min</span></a>
+      <a href="color.html" style="--c:#e5147d">Color, luz y sombra <span>≈ 57 min</span></a>
+      <a href="minimalista.html" style="--c:#0f4bd1">Por qué América Latina no puede ser minimalista <span>≈ 26 min</span></a>
+      <a href="patio.html" style="--c:#12b6ad">Sombra, agua y patio <span>≈ 45 min</span></a>
+    </nav>
+  </div>
+
 
   <!-- ===== ÍNDICE LATERAL ===== -->
   <div class="side-idx" style="position:fixed;right:20px;top:50%;transform:translateY(-50%);z-index:60;display:flex;flex-direction:column;gap:14px">
@@ -304,6 +433,9 @@
     <a id="idx-patio" href="#patio" data-idx style="display:flex;align-items:center;gap:9px;justify-content:flex-end;font-weight:800;
        text-transform:uppercase;letter-spacing:.06em;font-size:10px;color:rgba(251,243,223,.55)">
        <span>Patio</span><span style="width:26px;height:4px;background:currentColor;display:block"></span></a>
+    <a id="idx-ensayos" href="#ensayos" data-idx style="display:flex;align-items:center;gap:9px;justify-content:flex-end;font-weight:800;
+       text-transform:uppercase;letter-spacing:.06em;font-size:10px;color:rgba(251,243,223,.55)">
+       <span>Ensayos</span><span style="width:26px;height:4px;background:currentColor;display:block"></span></a>
     <a id="idx-manifiesto" href="#manifiesto" data-idx style="display:flex;align-items:center;gap:9px;justify-content:flex-end;font-weight:800;
        text-transform:uppercase;letter-spacing:.06em;font-size:10px;color:rgba(251,243,223,.55)">
        <span>Cierre</span><span style="width:26px;height:4px;background:currentColor;display:block"></span></a>
@@ -444,7 +576,7 @@
 
       <!-- paleta del idioma -->
       <div data-reveal data-stagger style="opacity:0;transform:translateY(30px);transition:all .8s cubic-bezier(.2,.7,.2,1);
-         margin-top:34px;display:grid;grid-template-columns:repeat(4,1fr);gap:12px">
+         margin-top:34px;display:grid;grid-template-columns:repeat(4,1fr);gap:12px" class="paleta">
         <div style="background:var(--almagre);color:var(--crema);padding:18px;border-bottom:8px solid var(--recocido)">
           <div style="font-family:'Anton',sans-serif;font-size:20px">Almagre</div>
           <div style="font-size:13px;font-weight:700;opacity:.85;margin-top:4px">Ladrillo recocido visto</div></div>
@@ -526,7 +658,7 @@
                background:#fbf3df;border:3px solid #2a1608;box-shadow:2px 2px 0 rgba(42,22,8,.55);pointer-events:none"></div>
           </div>
           <div style="display:flex;justify-content:space-between;font-weight:800;font-size:12px;color:#3a1f0c;margin-top:8px;letter-spacing:.05em">
-            <span>1800K · brasa</span><span>2700K · vela</span><span>3200K · hogar</span><span>penumbra ← claroscuro → luz</span></div>
+            <span>1800K · brasa</span><span>2700K · vela</span><span>3200K · hogar</span><span class="k-extra">penumbra ← claroscuro → luz</span></div>
         </div>
       </div>
     </div>
@@ -651,6 +783,50 @@
     </div>
   </section>
 
+  <!-- ============================================================ ENSAYOS -->
+  <section id="ensayos" data-sec="ensayos" class="nm-ensayos" style="position:relative;overflow:hidden;scroll-margin-top:64px;
+     padding:calc(84px + var(--borde-suave)*.5) 40px 110px;background:#fbf3df;color:#221d12">
+    <svg class="divisor" viewBox="0 0 1440 100" preserveAspectRatio="none" aria-hidden="true"
+       style="position:absolute;top:0;left:0;width:100%;height:var(--borde-suave);z-index:5">
+      <path fill="#12b6ad" d="M0 0 H1440 V40 C1235 92 1052 6 842 46 C640 84 428 14 208 54 C138 66 64 64 0 52 Z"/>
+      <path fill="#12b6ad" opacity=".4" d="M0 0 H1440 V18 C1180 62 980 4 760 30 C520 58 300 8 0 34 Z"/>
+    </svg>
+    <div class="pat pat-talavera" data-par="0.05" aria-hidden="true" style="top:-24%;bottom:-24%;background:#e5147d;opacity:.05;"></div>
+    <div style="max-width:1200px;margin:0 auto;position:relative;z-index:2">
+      <div data-reveal style="opacity:0;transform:translateY(30px);transition:all .8s cubic-bezier(.2,.7,.2,1)">
+        <span style="display:inline-block;background:#0c1c56;color:var(--maiz);font-weight:800;text-transform:uppercase;
+           letter-spacing:.14em;font-size:12px;padding:8px 14px">05 · La biblioteca · Cuatro ensayos</span>
+        <h2 style="font-family:'Anton',sans-serif;text-transform:uppercase;color:#111;line-height:.9;
+           font-size:clamp(40px,5.5vw,84px);margin:16px 0 0">Lee la<br><span style="color:var(--fucsia)">obra completa</span></h2>
+        <p style="max-width:58ch;color:#4a4038;font-size:18px;line-height:1.6;font-weight:600;margin:16px 0 0">
+          Cuatro ensayos del Arq. Orelio Martínez, con fuentes, capítulos y descarga en PDF. Cada uno lleva el
+          motivo de su tema: greca, talavera, chakana y rombos de telar.</p>
+      </div>
+      <div class="lib" data-reveal data-stagger style="opacity:0;transform:translateY(30px);transition:all .8s cubic-bezier(.2,.7,.2,1)">
+        <a class="lib-tarjeta" href="ladrillo.html" style="--c:#c0381c;--f:#611607;--p:var(--pat-greca)">
+          <div class="arcada" aria-hidden="true"><span></span><b>01</b></div>
+          <div class="cuerpo"><h3>El ladrillo como lengua materna</h3><p>El bloque, el tolete y el tabique: el idioma con que construimos nuestras casas.</p>
+            <div class="meta"><span>≈ 16 min · 9 capítulos</span><em>Leer →</em></div></div>
+        </a>
+        <a class="lib-tarjeta" href="color.html" style="--c:#e5147d;--f:#0c1c56;--p:var(--pat-talavera)">
+          <div class="arcada" aria-hidden="true"><span></span><b>02</b></div>
+          <div class="cuerpo"><h3>Color, luz y sombra</h3><p>La luz nunca es neutral y el color nunca es solo decoración.</p>
+            <div class="meta"><span>≈ 57 min · 19 capítulos</span><em>Leer →</em></div></div>
+        </a>
+        <a class="lib-tarjeta" href="minimalista.html" style="--c:#0f4bd1;--f:#0c1c56;--p:var(--pat-chakana)">
+          <div class="arcada" aria-hidden="true"><span></span><b>03</b></div>
+          <div class="cuerpo"><h3>Por qué América Latina no puede ser minimalista</h3><p>Historia, clima, cultura y economía de una arquitectura propia.</p>
+            <div class="meta"><span>≈ 26 min · 10 capítulos</span><em>Leer →</em></div></div>
+        </a>
+        <a class="lib-tarjeta" href="patio.html" style="--c:#12b6ad;--f:#08222e;--p:var(--pat-rombos)">
+          <div class="arcada" aria-hidden="true"><span></span><b>04</b></div>
+          <div class="cuerpo"><h3>Sombra, agua y patio</h3><p>El vacío central, el agua y la sombra como un solo sistema.</p>
+            <div class="meta"><span>≈ 45 min · 16 capítulos</span><em>Leer →</em></div></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
   <!-- ============================================================ MANIFIESTO -->
   <section id="manifiesto" data-sec="manifiesto" style="position:relative;overflow:hidden;scroll-margin-top:64px;padding-top:var(--borde-suave);
      background:
@@ -658,8 +834,8 @@
        linear-gradient(160deg, var(--fucsia) 0%, #c1155f 45%, var(--cobalto) 100%);">
     <svg class="divisor" viewBox="0 0 1440 100" preserveAspectRatio="none" aria-hidden="true"
        style="position:absolute;top:0;left:0;width:100%;height:var(--borde-suave);z-index:5">
-      <path fill="#12b6ad" d="M0 0 H1440 V48 C1246 16 1104 68 940 52 C776 36 704 82 540 64 C376 46 268 76 122 58 C78 52 38 50 0 54 Z"/>
-      <path fill="#12b6ad" opacity=".4" d="M0 0 H1440 V20 C1230 52 1010 12 790 32 C550 54 310 16 0 36 Z"/>
+      <path fill="#fbf3df" d="M0 0 H1440 V48 C1246 16 1104 68 940 52 C776 36 704 82 540 64 C376 46 268 76 122 58 C78 52 38 50 0 54 Z"/>
+      <path fill="#fbf3df" opacity=".4" d="M0 0 H1440 V20 C1230 52 1010 12 790 32 C550 54 310 16 0 36 Z"/>
     </svg>
     <div class="pat pat-chakana" data-par="0.08" aria-hidden="true" style="top:-24%;bottom:-24%;background:var(--maiz);opacity:.10;-webkit-mask-size:120px 120px;mask-size:120px 120px"></div>
     <svg viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true"
@@ -709,8 +885,26 @@
         <span>MÉXICO&nbsp;·&nbsp;GUATEMALA&nbsp;·&nbsp;EL SALVADOR&nbsp;·&nbsp;HONDURAS&nbsp;·&nbsp;NICARAGUA&nbsp;·&nbsp;COSTA RICA&nbsp;·&nbsp;PANAMÁ&nbsp;·&nbsp;CUBA&nbsp;·&nbsp;REPÚBLICA DOMINICANA&nbsp;·&nbsp;HAITÍ&nbsp;·&nbsp;COLOMBIA&nbsp;·&nbsp;VENEZUELA&nbsp;·&nbsp;ECUADOR&nbsp;·&nbsp;PERÚ&nbsp;·&nbsp;BOLIVIA&nbsp;·&nbsp;PARAGUAY&nbsp;·&nbsp;CHILE&nbsp;·&nbsp;URUGUAY&nbsp;·&nbsp;BRASIL&nbsp;·&nbsp;</span>
       </div>
     </div>
-    <footer style="position:relative;z-index:2;text-align:center;padding:20px;color:rgba(251,243,223,.75);font-size:13px;font-weight:700">
-      No Minimal · Tres tesis de Arq. Orelio Martínez · Diseño maximalista con propósito</footer>
+    <footer class="nm-pie">
+      <div class="nm-pie-grid">
+        <div class="nm-pie-marca">
+          <a href="#hero" class="marca">NO MINIMAL</a>
+          <p>Arquitectura latinoamericana sin miedo al color.</p>
+          <p class="autor">Arq. Orelio Martínez · Arquitecto e Ingeniero Civil · Nicaragua · EE.UU.</p>
+        </div>
+        <nav aria-label="Ensayos"><h3>Ensayos</h3>
+          <a href="ladrillo.html">El ladrillo como lengua materna</a>
+          <a href="color.html">Color, luz y sombra</a>
+          <a href="minimalista.html">Por qué América Latina no puede ser minimalista</a>
+          <a href="patio.html">Sombra, agua y patio</a>
+        </nav>
+        <nav aria-label="Secciones"><h3>La portada</h3>
+          <a href="#construccion">Construcción</a><a href="#luz">Luz y sombra</a>
+          <a href="#cultura">Cultura</a><a href="#patio">Patio</a><a href="#manifiesto">Manifiesto</a>
+        </nav>
+      </div>
+      <p class="nm-pie-fin">© 2026 No Minimal · nominimal.com · Cuatro ensayos de arquitectura latinoamericana</p>
+    </footer>
   </section>
 </div>
 
@@ -974,6 +1168,47 @@
       });
     }, {threshold:0.25, rootMargin:"0px 0px -10% 0px"});
     titulares.forEach(function(h){ obsTit.observe(h); });
+  }
+})();
+</script>
+
+<script>
+/* Menu movil y seccion activa en la barra superior. */
+(function(){
+  "use strict";
+  var btn = document.querySelector(".nm-menu-btn"), menu = document.getElementById("nm-menu");
+  if (btn && menu){
+    var cerrarBtn = menu.querySelector(".nm-menu-cerrar");
+    var abrir = function(){
+      menu.hidden = false; btn.setAttribute("aria-expanded","true");
+      document.documentElement.style.overflow = "hidden";
+      cerrarBtn.focus();
+    };
+    var cerrar = function(devolver){
+      menu.hidden = true; btn.setAttribute("aria-expanded","false");
+      document.documentElement.style.overflow = "";
+      if (devolver) btn.focus();
+    };
+    btn.addEventListener("click", abrir);
+    cerrarBtn.addEventListener("click", function(){ cerrar(true); });
+    document.addEventListener("keydown", function(e){ if (e.key === "Escape" && !menu.hidden) cerrar(true); });
+    [].forEach.call(menu.querySelectorAll("a"), function(a){
+      a.addEventListener("click", function(){ cerrar(false); });
+    });
+    // si la ventana crece a escritorio con el menu abierto, se cierra solo
+    window.matchMedia("(min-width:901px)").addEventListener("change", function(m){ if (m.matches) cerrar(false); });
+  }
+
+  var enlaces = [].slice.call(document.querySelectorAll(".nm-nav nav a"));
+  if ("IntersectionObserver" in window && enlaces.length){
+    var obs = new IntersectionObserver(function(ents){
+      ents.forEach(function(e){
+        if (!e.isIntersecting) return;
+        var id = "#" + e.target.id;
+        enlaces.forEach(function(a){ a.classList.toggle("activo", a.getAttribute("href") === id); });
+      });
+    }, {rootMargin:"-45% 0px -50% 0px"});
+    [].forEach.call(document.querySelectorAll("section[id]"), function(s){ obs.observe(s); });
   }
 })();
 </script>

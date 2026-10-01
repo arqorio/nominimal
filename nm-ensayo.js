@@ -16,22 +16,22 @@
   var ENSAYOS = [
     { id: "ladrillo", url: "ladrillo.html", t: "El ladrillo como lengua materna",
       s: "El bloque, el tolete y el tabique: el idioma con que construimos nuestras casas.",
-      min: 16, p: "greca", c: "#c0381c", f: "#611607" },
+      min: 19, p: "greca", c: "#c0381c", f: "#611607" },
     { id: "color", url: "color.html", t: "Color, luz y sombra",
       s: "La luz nunca es neutral y el color nunca es solo decoración.",
       min: 57, p: "talavera", c: "#e5147d", f: "#0c1c56" },
     { id: "minimalista", url: "minimalista.html", t: "Por qué América Latina no puede ser minimalista",
       s: "Historia, clima, cultura y economía de una arquitectura propia.",
-      min: 26, p: "chakana", c: "#0f4bd1", f: "#0c1c56" },
+      min: 27, p: "chakana", c: "#0f4bd1", f: "#0c1c56" },
     { id: "patio", url: "patio.html", t: "Sombra, agua y patio",
       s: "El vacío central, el agua y la sombra como un solo sistema.",
       min: 45, p: "rombos", c: "#12b6ad", f: "#08222e" },
     { id: "construir", url: "construir.html", t: "Construir bien en Latinoamérica", serie: "tesis",
       s: "Terreno, materiales, costos y autoconstrucción: una guía para construir mejor.",
-      min: 43, p: "celosia", c: "#3f7d4a", f: "#1f2b26" },
+      min: 41, p: "celosia", c: "#3f7d4a", f: "#1f2b26" },
     { id: "psicologia", url: "psicologia-del-color.html", t: "Lo que el color nos hace", serie: "tesis",
       s: "Lo comprobado y lo exagerado sobre el color y la luz en el cuerpo, la mente y la casa.",
-      min: 55, p: "mola", c: "#c8102e", f: "#1d1a17" }
+      min: 53, p: "mola", c: "#c8102e", f: "#1d1a17" }
   ];
   ENSAYOS.forEach(function (e) { e.serie = e.serie || "temas"; });
 
@@ -88,7 +88,10 @@
   }
 
   /* ---- 4. Tiempo de lectura bajo el autor ---------------------------- */
-  var palabras = (doc.innerText || doc.textContent).split(/\s+/).length;
+  // las figuras interactivas no se leen como texto: no cuentan
+  function cuenta(n) { return (n.innerText || n.textContent).split(/\s+/).filter(Boolean).length; }
+  var palabras = cuenta(doc);
+  [].forEach.call(doc.querySelectorAll("figure.nm-fig"), function (f) { palabras -= cuenta(f); });
   var minutos = Math.max(1, Math.round(palabras / 220));
   var fila = document.querySelector(".hero-wrap > div:last-child");
   if (fila) {

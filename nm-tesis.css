@@ -1,0 +1,223 @@
+/* ==========================================================================
+   NO MINIMAL — serie "Tesis de divulgación"
+   Piezas propias de las tesis: entrada, recuadros, tablas, glosario,
+   insignias de evidencia y figuras interactivas. Se carga despues de
+   nm-ensayo.css, solo en las paginas con <body data-serie="tesis">.
+   ========================================================================== */
+
+body[data-serie="tesis"] .doc{max-width:820px}
+body[data-serie="tesis"] .doc ul,body[data-serie="tesis"] .doc ol:not(.src){margin:0 0 1.3em;padding-left:1.35em}
+body[data-serie="tesis"] .doc li{font-size:1.1rem;line-height:1.62;color:#221d12;margin-bottom:.5em}
+body[data-serie="tesis"] .doc li::marker{color:var(--acento-txt);font-weight:800}
+
+/* Antetitulo del capitulo: el numero lleva el color propio del capitulo. */
+body[data-serie="tesis"] .doc p.eyb{display:flex;align-items:center;gap:.6em}
+body[data-serie="tesis"] .doc p.eyb::before{content:'';flex:0 0 auto;width:1.1em;height:1.1em;
+  background:var(--cap,var(--acento));border-radius:3px;box-shadow:3px 3px 0 rgba(34,29,18,.18)}
+
+/* Idea central de cada capitulo */
+.doc p.nm-lead{font-family:'Zilla Slab',serif;font-style:italic;font-weight:500;
+  font-size:clamp(1.2rem,2.4vw,1.42rem);line-height:1.5;color:#3a3226;margin:0 0 1.6em;
+  padding:.2em 0 .2em 1em;border-left:4px solid var(--acento2)}
+.doc p.nm-lead em{font-style:inherit}
+
+/* Subcapitulos numerados */
+.doc h3 .n{display:inline-block;min-width:2.6em;margin-right:.25em;padding:.1em .45em;border-radius:6px;
+  background:var(--acento);color:#fff;font-size:.82em;text-align:center;vertical-align:.08em}
+.doc h4{font-family:'Archivo',sans-serif;font-weight:800;font-size:.86rem;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--oscuro);margin:1.8em 0 .6em}
+
+/* Cita destacada */
+.doc blockquote.nm-cita{margin:2.2em 0;padding:1.2em 1.4em;background:var(--oscuro);color:#fbf3df;
+  border-radius:4px 28px 4px 28px;box-shadow:8px 8px 0 var(--acento2);position:relative}
+.doc blockquote.nm-cita p{font-family:'Zilla Slab',serif;font-weight:700;font-style:italic;
+  font-size:clamp(1.25rem,2.8vw,1.6rem);line-height:1.35;color:inherit;margin:0}
+.doc blockquote.nm-cita::before{content:'“';position:absolute;top:-.36em;left:.2em;font-family:'Anton',sans-serif;
+  font-size:4.4rem;line-height:1;color:var(--acento2)}
+
+/* ------------------------------------------------------------- recuadros */
+.doc aside.nm-nota{--nota:var(--acento);margin:1.8em 0;padding:1.1em 1.3em 1em;
+  background:color-mix(in srgb,var(--nota) 9%,#fffaf0);border-left:7px solid var(--nota);
+  border-radius:0 14px 14px 0}
+.doc aside.nm-nota p,.doc aside.nm-nota li{font-size:1.03rem;line-height:1.6}
+.doc aside.nm-nota > :last-child{margin-bottom:0}
+.doc p.nm-nota-etq{display:flex;align-items:center;gap:.55em;margin:0 0 .5em;font-family:'Archivo',sans-serif;
+  font-weight:900;font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;color:#221d12}
+.doc p.nm-nota-etq::before{content:'';width:12px;height:12px;border-radius:50%;background:var(--nota)}
+.doc aside.nm-nota-error p.nm-nota-etq::before{border-radius:0;clip-path:polygon(50% 0,100% 100%,0 100%);width:14px}
+.doc aside.nm-nota-aplicar p.nm-nota-etq::before{border-radius:3px}
+.doc aside.nm-nota-mito{background:repeating-linear-gradient(135deg,color-mix(in srgb,var(--nota) 7%,#fffaf0) 0 14px,
+  color-mix(in srgb,var(--nota) 11%,#fffaf0) 14px 28px)}
+.doc aside.nm-nota h4{margin:.2em 0 .5em}
+
+/* --------------------------------------------------------------- tablas */
+.doc figure.nm-tabla{margin:1.8em 0;padding:0}
+.nm-tabla-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:10px;
+  border:2px solid var(--oscuro);background:#fffaf0}
+.nm-tabla-scroll:focus-visible{outline:3px solid var(--acento);outline-offset:3px}
+.nm-tabla table{border-collapse:collapse;width:100%;min-width:560px;font-family:'Archivo',sans-serif;font-size:.93rem;line-height:1.4}
+.nm-tabla thead th{background:var(--oscuro);color:#fbf3df;text-align:left;font-weight:800;font-size:.78rem;
+  letter-spacing:.06em;text-transform:uppercase;padding:11px 12px;vertical-align:bottom}
+.nm-tabla tbody th,.nm-tabla tbody td{padding:10px 12px;text-align:left;vertical-align:top;
+  border-top:1px solid rgba(34,29,18,.12);color:#2a2418}
+.nm-tabla tbody th{font-weight:700;min-width:9em}
+.nm-tabla tbody tr:nth-child(even){background:rgba(34,29,18,.035)}
+.nm-tabla figcaption{margin-top:.7em;font-size:.86rem;line-height:1.45;color:#6b5f52;font-style:italic}
+.nm-tabla .sws{display:inline-flex;gap:3px;margin-right:.5em;vertical-align:-.15em}
+.nm-tabla .sw{display:inline-block;width:1.05em;height:1.05em;border-radius:3px;box-shadow:inset 0 0 0 1px rgba(0,0,0,.18)}
+@media (max-width:640px){
+  .nm-tabla-scroll{border-radius:8px;margin:0 -6px}
+  .nm-tabla table{font-size:.88rem}
+  .nm-tabla-scroll::after{content:'desliza →';position:sticky;left:100%;display:block;width:max-content;
+    padding:4px 10px;font:800 .7rem 'Archivo',sans-serif;letter-spacing:.08em;color:#6b5f52}
+}
+
+/* --------------------------------------------- insignias de evidencia */
+.nm-ev{display:inline-grid;place-items:center;width:1.25em;height:1.25em;margin-right:.15em;
+  border-radius:50%;font-size:.9em;line-height:1;font-style:normal;vertical-align:-.12em}
+.nm-ev-solido{color:#1f6b3f}
+.nm-ev-contextual{color:#b97900}
+.nm-ev-mito{color:#7b2d8e}
+
+/* ------------------------------------------------------------ glosario */
+.doc dl.nm-glosario{display:grid;grid-template-columns:minmax(9em,13em) 1fr;gap:0;margin:1em 0 0;
+  border-top:2px solid var(--oscuro)}
+.doc dl.nm-glosario dt,.doc dl.nm-glosario dd{padding:.75em .4em;border-bottom:1px solid rgba(34,29,18,.14);margin:0}
+.doc dl.nm-glosario dt{font-family:'Archivo',sans-serif;font-weight:800;color:var(--acento-txt)}
+.doc dl.nm-glosario dd{font-size:1.03rem;line-height:1.55;color:#2a2418}
+@media (max-width:560px){
+  .doc dl.nm-glosario{grid-template-columns:1fr}
+  .doc dl.nm-glosario dt{border-bottom:0;padding-bottom:0}
+}
+
+/* Errores comunes: numeros grandes */
+.doc ol.nm-errores{list-style:none;padding:0!important;counter-reset:err;display:grid;gap:.7em}
+.doc ol.nm-errores li{counter-increment:err;position:relative;padding:.7em .9em .7em 3.4em;margin:0;
+  background:#fffaf0;border:2px solid rgba(34,29,18,.12);border-radius:12px}
+.doc ol.nm-errores li::before{content:counter(err);position:absolute;left:.6em;top:.35em;
+  font-family:'Anton',sans-serif;font-size:1.9rem;line-height:1;color:var(--acento)}
+
+/* =======================================================================
+   FIGURAS INTERACTIVAS
+   ======================================================================= */
+.doc figure.nm-fig{margin:2.2em -.4em;padding:clamp(16px,3vw,26px);background:#fffaf0;
+  border:3px solid var(--oscuro);border-radius:18px;box-shadow:8px 9px 0 rgba(34,29,18,.16)}
+.nm-fig figcaption{margin-top:1em;font-size:.86rem;line-height:1.45;color:#6b5f52;font-style:italic}
+.nm-fig .nm-fig-tit{margin:0 0 .3em!important;font-family:'Anton',sans-serif;text-transform:uppercase;
+  font-size:1.3rem!important;line-height:1.05!important;letter-spacing:.01em;color:var(--oscuro)!important}
+.nm-fig .nm-fig-ayuda{margin:0 0 1em!important;font-size:.95rem!important;line-height:1.45!important;color:#5a4e42!important}
+.nm-fig svg{display:block;width:100%;height:auto}
+.nm-fig text{font-family:'Archivo',sans-serif}
+
+/* leyenda numerada bajo los dibujos */
+.nm-ley{list-style:none;margin:14px 0 0!important;padding:0!important;counter-reset:ley;
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:6px 18px}
+.nm-ley li{counter-increment:ley;display:flex;gap:9px;align-items:flex-start;margin:0!important;
+  font-size:.95rem!important;line-height:1.4!important}
+.nm-ley li::before{content:counter(ley);flex:0 0 24px;height:24px;border-radius:50%;background:var(--oscuro);
+  color:#fff;font:900 .78rem/24px 'Archivo',sans-serif;text-align:center}
+
+/* controles comunes */
+.nm-ctrl{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px}
+.nm-chip{appearance:none;border:2px solid var(--oscuro);background:#fff;color:var(--oscuro);cursor:pointer;
+  font:800 .86rem 'Archivo',sans-serif;padding:0 14px;min-height:42px;border-radius:999px;
+  transition:background .2s,color .2s,transform .2s}
+.nm-chip:hover{transform:translateY(-2px)}
+.nm-chip[aria-pressed="true"]{background:var(--oscuro);color:#fbf3df;box-shadow:3px 3px 0 var(--acento2)}
+.nm-chip:focus-visible,.nm-rango:focus-visible,.nm-campo:focus-visible{outline:3px solid var(--acento);outline-offset:3px}
+.nm-boton{appearance:none;border:0;cursor:pointer;background:var(--acento);color:#fff;font:900 .95rem 'Archivo',sans-serif;
+  letter-spacing:.03em;padding:0 22px;min-height:46px;border-radius:999px;box-shadow:4px 4px 0 var(--oscuro)}
+.nm-boton:active{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--oscuro)}
+.nm-rango{width:100%;accent-color:var(--acento);min-height:36px;margin:4px 0}
+.nm-etq{display:block;font:800 .74rem 'Archivo',sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#5a4e42;margin-bottom:4px}
+.nm-campo{width:100%;min-height:46px;padding:0 12px;border:2px solid var(--oscuro);border-radius:10px;
+  background:#fff;font:700 1rem 'Archivo',sans-serif;color:#221d12}
+.nm-salida{font-family:'Archivo',sans-serif;font-weight:800;color:var(--oscuro)}
+
+/* --- barras CAF ---------------------------------------------------- */
+.nm-barras{list-style:none;margin:0!important;padding:0!important;display:grid;gap:6px}
+.nm-barras li{display:grid;grid-template-columns:8.2em 1fr;align-items:center;gap:10px;margin:0!important;font-size:.92rem!important}
+.nm-barras .pais{font-family:'Archivo',sans-serif;font-weight:700;text-align:right;color:#2a2418;line-height:1.15}
+.nm-barras .pista{position:relative;height:24px}
+.nm-barras .barra{position:absolute;inset:0 auto 0 0;width:calc(var(--v) * var(--e,1) * 1%);background:#8d8a84;border-radius:0 6px 6px 0;
+  transform-origin:left;transition:transform 1s cubic-bezier(.2,.7,.2,1)}
+.nm-barras li.alto .barra{background:var(--acento-barra,#b5541c)}
+.nm-barras .valor{position:absolute;top:50%;left:calc(var(--v) * var(--e,1) * 1% + 8px);transform:translateY(-50%);
+  font-family:'Archivo',sans-serif;font-weight:900;font-size:.85rem;white-space:nowrap;color:#2a2418}
+.nm-barras.oculto .barra{transform:scaleX(0)}
+.nm-barras li.sel .barra{background:var(--acento)}
+.nm-barras li{cursor:pointer}
+.nm-barras-nota{margin:12px 0 0!important;font-size:.95rem!important;min-height:3em}
+@media (max-width:520px){ .nm-barras{--e:.72} .nm-barras li{grid-template-columns:6.6em 1fr;gap:8px} .nm-barras .pais{font-size:.82rem} }
+
+/* --- calculadora --------------------------------------------------- */
+.nm-calc-campos{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:16px}
+@media (max-width:620px){ .nm-calc-campos{grid-template-columns:1fr} }
+.nm-calc-res{display:grid;gap:8px;margin:0;padding:0}
+.nm-calc-res div{display:flex;justify-content:space-between;gap:12px;padding:10px 12px;border-radius:10px;background:rgba(34,29,18,.05)}
+.nm-calc-res dt{font-family:'Archivo',sans-serif;font-weight:700;color:#3a3226}
+.nm-calc-res dd{margin:0;font-family:'Archivo',sans-serif;font-weight:900;text-align:right;color:#221d12}
+.nm-calc-res div.total{background:var(--oscuro)}
+.nm-calc-res div.total dt,.nm-calc-res div.total dd{color:#fbf3df}
+.nm-calc-res div.total dd{color:var(--acento2);font-size:1.15rem}
+.nm-reparto{display:flex;height:46px;margin:16px 0 6px;border-radius:10px;overflow:hidden;border:2px solid var(--oscuro)}
+.nm-reparto span{display:flex;align-items:center;justify-content:center;padding:0 6px;font:900 .8rem 'Archivo',sans-serif;
+  color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.doc p.nm-reparto-ley{font-size:.9rem;line-height:1.4}
+.nm-reparto-ley{display:flex;flex-wrap:wrap;gap:6px 16px;margin:0;font:700 .86rem 'Archivo',sans-serif;color:#3a3226}
+.nm-reparto-ley i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+
+/* --- sismo: muro confinado vs no confinado --------------------------- */
+.nm-sismo-par{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media (max-width:560px){ .nm-sismo-par{grid-template-columns:1fr} }
+.nm-sismo-par > div{background:#fff;border-radius:12px;padding:10px;border:2px solid rgba(34,29,18,.12)}
+.nm-sismo-par p{margin:.4em 0 0!important;font:800 .9rem 'Archivo',sans-serif!important;text-align:center;color:#2a2418!important}
+.nm-sismo .grieta{opacity:0;transition:opacity .2s}
+.nm-sismo .cae{transform-box:fill-box;transform-origin:0 100%;transition:transform .9s cubic-bezier(.5,0,.8,.4) .55s}
+.nm-sismo.tiembla .muro{animation:nm-tiembla .14s linear 6}
+.nm-sismo.tiembla .grieta,.nm-sismo.roto .grieta{opacity:1;transition-delay:.4s}
+.nm-sismo.roto .cae{transform:translate(26px,58px) rotate(24deg)}
+@keyframes nm-tiembla{25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
+
+/* --- aire en movimiento (seccion bioclimatica) ----------------------- */
+.nm-aire path.flujo{stroke-dasharray:10 12;animation:nm-flujo 1.6s linear infinite}
+@keyframes nm-flujo{to{stroke-dashoffset:-44}}
+
+/* --- etapas de la vivienda ------------------------------------------ */
+.nm-etapa{transition:opacity .5s ease,transform .5s ease}
+.nm-etapa.fuera{opacity:0;transform:translateY(-6px)}
+
+/* --- espectro y kelvin ---------------------------------------------- */
+.nm-espectro{height:56px;border-radius:10px;border:2px solid var(--oscuro);
+  background:linear-gradient(90deg,#5b2a86 0%,#3a3dff 14%,#0099ff 26%,#00d0c0 36%,#3fd23a 44%,#c8e81c 54%,#ffe600 59%,#ffa600 67%,#ff4b00 79%,#d60000 90%,#7a0000 100%)}
+.nm-escala{display:flex;justify-content:space-between;margin:6px 2px 0;font:800 .78rem 'Archivo',sans-serif;color:#5a4e42}
+.nm-muestra{display:flex;align-items:center;gap:14px;margin-top:14px}
+.nm-muestra .bola{flex:0 0 auto;width:64px;height:64px;border-radius:50%;border:3px solid var(--oscuro);box-shadow:0 0 30px var(--bola,#ccc)}
+.nm-muestra p{margin:0!important;font-size:1rem!important;line-height:1.4!important}
+
+.nm-cuarto{position:relative;border-radius:12px;overflow:hidden;border:2px solid var(--oscuro)}
+.nm-cuarto .luz{position:absolute;inset:0;mix-blend-mode:multiply;pointer-events:none;transition:background .4s}
+.nm-cuarto .brillo{position:absolute;inset:0;pointer-events:none;transition:opacity .4s;
+  background:radial-gradient(circle at 50% 8%,rgba(255,255,255,.55),transparent 60%)}
+.nm-kdatos{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:12px 0 0}
+.nm-kdatos div{background:rgba(34,29,18,.05);border-radius:10px;padding:8px 10px}
+.nm-kdatos b{display:block;font:900 1.05rem 'Archivo',sans-serif;color:#221d12}
+.nm-kdatos span{font:700 .72rem 'Archivo',sans-serif;letter-spacing:.08em;text-transform:uppercase;color:#6b5f52}
+@media (max-width:480px){ .nm-kdatos{grid-template-columns:1fr 1fr} .nm-kdatos div:last-child{grid-column:1/-1} }
+
+/* --- reloj circadiano ----------------------------------------------- */
+.nm-reloj-lect{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}
+.nm-reloj-lect div{border-radius:10px;padding:8px 12px;background:rgba(34,29,18,.05);font:700 .92rem 'Archivo',sans-serif;color:#2a2418}
+.nm-reloj-lect b{font-weight:900}
+
+/* --- 60-30-10 -------------------------------------------------------- */
+.nm-sala .p60,.nm-sala .p30,.nm-sala .p10,.nm-sala .p30b{transition:fill .5s ease}
+.nm-6030{display:flex;height:34px;border-radius:8px;overflow:hidden;border:2px solid var(--oscuro);margin-top:12px}
+.nm-6030 span{display:flex;align-items:center;justify-content:center;font:900 .8rem 'Archivo',sans-serif;transition:background .5s}
+.nm-paleta-info{margin:10px 0 0!important;font-size:.98rem!important}
+
+@media (prefers-reduced-motion:reduce){
+  .nm-aire path.flujo,.nm-sismo.tiembla .muro{animation:none}
+  .nm-barras .barra,.nm-etapa,.nm-sismo .cae{transition:none}
+}
+@media print{ .nm-ctrl,.nm-boton{display:none!important} }

@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://nominimal.com/</loc><changefreq>monthly</changefreq></url>
-  <url><loc>https://nominimal.com/ladrillo.html</loc><changefreq>monthly</changefreq></url>
-  <url><loc>https://nominimal.com/minimalista.html</loc><changefreq>monthly</changefreq></url>
-  <url><loc>https://nominimal.com/color.html</loc><changefreq>monthly</changefreq></url>
-  <url><loc>https://nominimal.com/patio.html</loc><changefreq>monthly</changefreq></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url><loc>https://nominimal.com/</loc><lastmod>2026-09-30</lastmod><changefreq>monthly</changefreq><priority>1.0</priority><image:image><image:loc>https://nominimal.com/og/og-inicio.jpg</image:loc></image:image></url>
+  <url><loc>https://nominimal.com/ladrillo.html</loc><lastmod>2026-09-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority><image:image><image:loc>https://nominimal.com/og/og-ladrillo.jpg</image:loc></image:image></url>
+  <url><loc>https://nominimal.com/minimalista.html</loc><lastmod>2026-09-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority><image:image><image:loc>https://nominimal.com/og/og-minimalista.jpg</image:loc></image:image></url>
+  <url><loc>https://nominimal.com/color.html</loc><lastmod>2026-09-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority><image:image><image:loc>https://nominimal.com/og/og-color.jpg</image:loc></image:image></url>
+  <url><loc>https://nominimal.com/patio.html</loc><lastmod>2026-09-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority><image:image><image:loc>https://nominimal.com/og/og-patio.jpg</image:loc></image:image></url>
+  <url><loc>https://nominimal.com/construir.html</loc><lastmod>2026-09-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority><image:image><image:loc>https://nominimal.com/og/og-construir.jpg</image:loc></image:image></url>
+  <url><loc>https://nominimal.com/psicologia-del-color.html</loc><lastmod>2026-09-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority><image:image><image:loc>https://nominimal.com/og/og-psicologia.jpg</image:loc></image:image></url>
 </urlset>

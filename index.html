@@ -6,22 +6,29 @@
 
   <link rel="icon" type="image/svg+xml" href="./favicon.svg">
   <link rel="canonical" href="https://nominimal.com/">
-  <meta property="og:url" content="https://nominimal.com/">
-  <title>No Minimal — Arquitectura latinoamericana sin miedo al color</title>
-  <meta name="description" content="Manifiesto y ensayos del Arq. Orelio Martínez: por qué la arquitectura latinoamericana no puede ser minimalista. Ladrillo, luz y sombra, color y el patio con agua y sombra.">
-  <meta name="keywords" content="arquitectura latinoamericana, maximalismo, color en arquitectura, ladrillo, casa de patio, luz y sombra, Barragán, Orelio Martínez, No Minimal">
-  <meta name="author" content="Arq. Orelio Martínez">
-  <meta name="robots" content="index,follow">
-  <meta name="theme-color" content="#0c1c56">
+  <title>Arquitectura latinoamericana sin miedo al color | No Minimal</title>
+  <meta name="description" content="Ensayos y tesis del Arq. Orelio Martínez sobre arquitectura latinoamericana: ladrillo, luz, color, patio, cómo construir bien y psicología del color.">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta property="og:site_name" content="No Minimal">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="No Minimal — Arquitectura latinoamericana sin miedo al color">
-  <meta property="og:description" content="Tres tesis y un ensayo sobre por qué América Latina no puede ser minimalista: ladrillo, luz y sombra, color y el patio.">
-  <meta property="og:image" content="https://nominimal.com/og-image.png">
   <meta property="og:locale" content="es_LA">
+  <meta property="og:title" content="No Minimal — Arquitectura latinoamericana sin miedo al color">
+  <meta property="og:description" content="Por qué América Latina no puede ser minimalista: ladrillo, luz y sombra, color, patio y cómo construir bien. Ensayos y tesis del Arq. Orelio Martínez.">
+  <meta property="og:image" content="https://nominimal.com/og/og-inicio.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="América Latina NO puede ser minimalista — No Minimal">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="No Minimal — Arquitectura latinoamericana sin miedo al color">
-  <meta name="twitter:description" content="Tres tesis y un ensayo: ladrillo, luz y sombra, color y el patio latinoamericano.">
-  <meta name="twitter:image" content="https://nominimal.com/og-image.png">
+  <meta name="twitter:description" content="Por qué América Latina no puede ser minimalista: ladrillo, luz y sombra, color, patio y cómo construir bien. Ensayos y tesis del Arq. Orelio Martínez.">
+  <meta name="twitter:image" content="https://nominimal.com/og/og-inicio.jpg">
+  <meta name="twitter:image:alt" content="América Latina NO puede ser minimalista — No Minimal">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta property="og:url" content="https://nominimal.com/">
+  <meta name="keywords" content="arquitectura latinoamericana, maximalismo, color en arquitectura, ladrillo, casa de patio, luz y sombra, Barragán, Orelio Martínez, No Minimal">
+  <meta name="author" content="Arq. Orelio Martínez">
+  <meta name="theme-color" content="#0c1c56">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
@@ -79,7 +86,6 @@
   html{-webkit-text-size-adjust:100%}
   body{-webkit-tap-highlight-color:transparent}
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://nominimal.com/#website","url":"https://nominimal.com/","name":"No Minimal","inLanguage":"es","description":"Manifiesto y ensayos del Arq. Orelio Martínez sobre por qué la arquitectura latinoamericana no puede ser minimalista.","author":{"@id":"https://nominimal.com/#person"},"publisher":{"@id":"https://nominimal.com/#person"}},{"@type":"Person","@id":"https://nominimal.com/#person","name":"Arq. Orelio Martínez","jobTitle":"Arquitecto","description":"Arquitecto e Ingeniero Civil, autor de la serie de ensayos No Minimal sobre arquitectura latinoamericana."}]}</script>
 
 <style>
 /* ==========================================================================
@@ -332,6 +338,29 @@
     gap:8px;font-weight:800;font-size:13px;color:#6b5f52}
   .lib-tarjeta .meta em{font-style:normal;background:var(--c);color:#fff;padding:10px 16px;border-radius:999px;white-space:nowrap}
 
+  .lib-serie{display:flex;align-items:baseline;flex-wrap:wrap;gap:6px 14px;margin:56px 0 0;padding-bottom:12px;
+    border-bottom:3px solid #221d12}
+  .lib-serie b{font-family:'Anton',sans-serif;font-weight:400;font-size:clamp(26px,3vw,38px);text-transform:uppercase;line-height:1;color:#111}
+  .lib-serie span{font-weight:800;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#6b5f52}
+  .lib-serie + p{max-width:62ch;margin:12px 0 0;font-size:16px;line-height:1.55;font-weight:600;color:#5a4e42}
+  .lib-serie + .lib,.lib-serie + p + .lib{margin-top:26px}
+  /* las tesis: tarjetas apaisadas, dos por fila */
+  .lib-2{grid-template-columns:repeat(2,1fr)}
+  .lib-2 .lib-tarjeta{flex-direction:row;border-radius:120px 18px 18px 120px}
+  .lib-2 .lib-tarjeta .arcada{flex:0 0 150px;height:auto;min-height:230px}
+  .lib-2 .lib-tarjeta .arcada b{left:auto;right:-2px;bottom:50%;transform:translateY(50%);
+    border-radius:14px 0 0 14px;padding:6px 10px 4px 14px}
+  .lib-2 .lib-tarjeta .cuerpo{padding:22px 24px 24px}
+  .lib-tarjeta .tag{font-weight:800;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--c)}
+  @media (max-width:1100px){ .lib-2{grid-template-columns:1fr} }
+  @media (max-width:640px){
+    .lib-2 .lib-tarjeta{border-radius:80px 18px 18px 80px}
+    .lib-2 .lib-tarjeta .arcada{flex:0 0 92px;min-height:150px}
+    .lib-2 .lib-tarjeta .arcada b{padding:6px 8px 4px 10px;font-size:20px}
+    .lib-2 .lib-tarjeta .cuerpo{padding:18px 20px 22px}
+    .lib-serie{margin-top:44px}
+  }
+
   /* ---- pie ---- */
   .nm-pie{position:relative;z-index:2;background:rgba(12,20,56,.55);color:rgba(251,243,223,.85);padding:44px 40px 26px}
   .nm-pie-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:34px}
@@ -374,6 +403,7 @@
   }
   @media (prefers-reduced-motion:reduce){ #nm-menu{animation:none} .lib-tarjeta{transition:none} }
 </style>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://nominimal.com/#website","url":"https://nominimal.com/","name":"No Minimal","inLanguage":"es","description":"Ensayos del Arq. Orelio Martínez sobre arquitectura latinoamericana sin miedo al color.","publisher":{"@id":"https://nominimal.com/#person"},"author":{"@id":"https://nominimal.com/#person"}},{"@type":"Person","@id":"https://nominimal.com/#person","name":"Orelio Martínez","honorificPrefix":"Arq.","jobTitle":"Arquitecto e Ingeniero Civil","url":"https://nominimal.com/","nationality":{"@type":"Country","name":"Nicaragua"},"memberOf":{"@type":"Organization","name":"AIA Chicago"},"knowsAbout":["Arquitectura latinoamericana","Arquitectura bioclimática","Color en la arquitectura","Mampostería","Casa de patio","Psicología del color","Autoconstrucción"]},{"@type":"CollectionPage","@id":"https://nominimal.com/#pagina","url":"https://nominimal.com/","name":"Arquitectura latinoamericana sin miedo al color | No Minimal","description":"Ensayos y tesis de divulgación del Arq. Orelio Martínez sobre arquitectura latinoamericana: el ladrillo, la luz y la sombra, el color, la casa de patio, cómo construir bien en la región y la psicología del color.","inLanguage":"es","isPartOf":{"@id":"https://nominimal.com/#website"},"about":{"@type":"Thing","name":"Arquitectura latinoamericana"},"primaryImageOfPage":{"@type":"ImageObject","url":"https://nominimal.com/og/og-inicio.jpg","width":1200,"height":630},"hasPart":[{"@id":"https://nominimal.com/ladrillo.html#article"},{"@id":"https://nominimal.com/color.html#article"},{"@id":"https://nominimal.com/minimalista.html#article"},{"@id":"https://nominimal.com/patio.html#article"},{"@id":"https://nominimal.com/construir.html#article"},{"@id":"https://nominimal.com/psicologia-del-color.html#article"}],"mainEntity":{"@type":"ItemList","itemListElement":[{"@type":"ListItem","position":1,"url":"https://nominimal.com/ladrillo.html","name":"El ladrillo como lengua materna"},{"@type":"ListItem","position":2,"url":"https://nominimal.com/color.html","name":"Color, luz y sombra"},{"@type":"ListItem","position":3,"url":"https://nominimal.com/minimalista.html","name":"¿Por qué América Latina no puede ser minimalista?"},{"@type":"ListItem","position":4,"url":"https://nominimal.com/patio.html","name":"Sombra, agua y patio"},{"@type":"ListItem","position":5,"url":"https://nominimal.com/construir.html","name":"Construir bien en Latinoamérica"},{"@type":"ListItem","position":6,"url":"https://nominimal.com/psicologia-del-color.html","name":"Lo que el color nos hace"}]}}]}</script>
 </head>
 <body>
 <div id="progreso" aria-hidden="true"></div>
@@ -412,6 +442,11 @@
       <a href="color.html" style="--c:#e5147d">Color, luz y sombra <span>≈ 57 min</span></a>
       <a href="minimalista.html" style="--c:#0f4bd1">Por qué América Latina no puede ser minimalista <span>≈ 26 min</span></a>
       <a href="patio.html" style="--c:#12b6ad">Sombra, agua y patio <span>≈ 45 min</span></a>
+    </nav>
+    <p class="nm-menu-sub">Tesis de divulgación</p>
+    <nav class="nm-menu-ensayos" aria-label="Tesis de divulgación">
+      <a href="construir.html" style="--c:#3f7d4a">Construir bien en Latinoamérica <span>≈ 43 min</span></a>
+      <a href="psicologia-del-color.html" style="--c:#c8102e">Lo que el color nos hace <span>≈ 55 min</span></a>
     </nav>
   </div>
 
@@ -503,13 +538,13 @@
       <div data-par="-0.07" style="will-change:transform">
       <div class="hero-pics" style="display:grid;grid-template-columns:1fr 1fr;gap:12px;transform:rotate(1.5deg);animation:floatUp 8s ease-in-out infinite">
         <div style="position:relative;height:220px;border:5px solid var(--maiz);box-shadow:8px 8px 0 rgba(0,0,0,.35)">
-          <img width="612" height="394" src="./uploads/img/00-fachada-color.webp" alt="Fachada de color" fetchpriority="high" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block"></div>
+          <img width="612" height="394" src="./uploads/img/00-fachada-color.webp" alt="Calle colonial empedrada con fachadas pintadas de colores vivos" fetchpriority="high" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block"></div>
         <div style="position:relative;height:150px;border:5px solid var(--fucsia);box-shadow:8px 8px 0 rgba(0,0,0,.35);margin-top:28px">
-          <img width="598" height="600" src="./uploads/img/01-azulejo-talavera.webp" alt="Azulejo / talavera" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block"></div>
+          <img width="598" height="600" src="./uploads/img/01-azulejo-talavera.webp" alt="Azulejo de talavera pintado a mano en azul cobalto y amarillo" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block"></div>
         <div style="position:relative;height:150px;border:5px solid var(--turquesa);box-shadow:8px 8px 0 rgba(0,0,0,.35)">
-          <img width="800" height="450" src="./uploads/img/02-mural-callejero.webp" alt="Mural" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block"></div>
+          <img width="800" height="450" src="./uploads/img/02-mural-callejero.webp" alt="Mural callejero latinoamericano con el rostro de una mujer y la frase «Paz es nuestra»" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block"></div>
         <div style="position:relative;height:220px;border:5px solid var(--verde);box-shadow:8px 8px 0 rgba(0,0,0,.35);margin-top:-28px">
-          <img width="1200" height="800" src="./uploads/img/03-textil-andino.webp" alt="Textil andino" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block"></div>
+          <img width="1200" height="800" src="./uploads/img/03-textil-andino.webp" alt="Telar andino con hilos de colores tensados" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block"></div>
       </div>
       </div>
     </div>
@@ -556,16 +591,16 @@
          margin-top:44px;display:grid;grid-template-columns:1.1fr 1fr 1fr;gap:12px;background:var(--bloqueosc);padding:12px;
          border:12px solid var(--bloque);box-shadow:16px 20px 0 rgba(46,10,4,.45)" class="c-grid">
         <div class="arco-alto lustre viva" style="position:relative;grid-row:span 2;min-height:340px;border:3px solid var(--ocre)">
-          <img width="740" height="494" src="./uploads/img/04-muro-ladrillo-visto.webp" alt="Muro de ladrillo visto" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block"></div>
+          <img width="740" height="494" src="./uploads/img/04-muro-ladrillo-visto.webp" alt="Muro de ladrillo rojo visto con sus juntas de mortero" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block"></div>
         <div style="position:relative;min-height:164px;border:3px solid var(--ocre)">
-          <img width="448" height="299" src="./uploads/img/05-boveda-dieste.webp" alt="Bóveda de Dieste" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block"></div>
+          <img width="448" height="299" src="./uploads/img/05-boveda-dieste.webp" alt="Bóveda de ladrillo visto del ingeniero uruguayo Eladio Dieste" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block"></div>
         <div style="background:var(--recocido);padding:20px;color:var(--crema);display:flex;flex-direction:column;justify-content:center;border:3px solid var(--ocre)">
           <p style="margin:0;font-family:'Anton',sans-serif;font-size:24px;line-height:1.05;text-transform:uppercase">
             La varilla que sobresale no es un descuido</p>
           <p style="margin:10px 0 0;font-size:15px;font-weight:700;color:var(--maiz)">es un tiempo verbal: la casa que se conjuga en futuro.</p>
         </div>
         <div style="position:relative;min-height:164px;border:3px solid var(--ocre)">
-          <img width="1200" height="750" src="./uploads/img/06-torre-ladrillo-togo-diaz.webp" alt="Torre de ladrillo · Togo Díaz" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block"></div>
+          <img width="1200" height="750" src="./uploads/img/06-torre-ladrillo-togo-diaz.webp" alt="Torres de vivienda de ladrillo visto de José Ignacio «Togo» Díaz en Córdoba, Argentina" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block"></div>
         <div style="background:var(--teja);padding:20px;color:#fff;display:flex;flex-direction:column;justify-content:center;border:3px solid var(--ocre)">
           <p style="margin:0;font-weight:800;text-transform:uppercase;letter-spacing:.06em;font-size:13px">Referencias cultas</p>
           <p style="margin:8px 0 0;font-size:16px;font-weight:700;line-height:1.35">Eladio Dieste · "Togo" Díaz · Rogelio Salmona — Torres del Parque.</p>
@@ -630,16 +665,16 @@
       <div data-reveal data-stagger style="opacity:0;transform:translateY(30px);transition:all .8s cubic-bezier(.2,.7,.2,1);
          margin-top:40px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;align-items:stretch" class="l-grid">
         <div class="arco lustre viva" style="position:relative;min-height:280px;border:5px solid var(--oro);box-shadow:14px 16px 30px rgba(30,12,4,.6)">
-          <img width="750" height="500" src="./uploads/img/07-luz-celosia.webp" alt="Luz de celosía" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block"></div>
+          <img width="750" height="500" src="./uploads/img/07-luz-celosia.webp" alt="Luz del sol filtrada por una celosía de concreto en un pasillo" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block"></div>
         <div style="display:flex;flex-direction:column;gap:14px">
           <div style="position:relative;flex:1;min-height:130px;border:5px solid var(--fucsia);box-shadow:14px 16px 30px rgba(30,12,4,.6)">
-            <img width="512" height="512" src="./uploads/img/08-alero-sombra.webp" alt="Alero / sombra larga" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block"></div>
+            <img width="512" height="512" src="./uploads/img/08-alero-sombra.webp" alt="Sombra larga de un alero sobre un muro al atardecer" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block"></div>
           <div style="background:#2a1608;color:var(--crema);padding:16px;border:5px solid var(--teja)">
             <div style="font-family:'Anton',sans-serif;font-size:22px;color:var(--oro)">2000K → 3000K</div>
             <div style="font-size:14px;font-weight:700;margin-top:6px">Modo cálido del hogar. Nunca el blanco frío y uniforme del vocabulario minimalista.</div></div>
         </div>
         <div class="arco lustre viva" style="position:relative;min-height:280px;border:5px solid var(--maiz);box-shadow:14px 16px 30px rgba(30,12,4,.6)">
-          <img width="736" height="736" src="./uploads/img/09-claroscuro-patio.webp" alt="Claroscuro / patio" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block"></div>
+          <img width="736" height="736" src="./uploads/img/09-claroscuro-patio.webp" alt="Patio de noche iluminado con guirnaldas de luz cálida" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block"></div>
       </div>
 
       <!-- escala kelvin interactiva -->
@@ -694,17 +729,17 @@
       <div class="u-collage" data-reveal data-stagger style="opacity:0;transform:translateY(30px);transition:all .8s cubic-bezier(.2,.7,.2,1);
          margin-top:40px;display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:120px;gap:12px">
         <div style="position:relative;grid-column:span 3;grid-row:span 2;border:5px solid var(--maiz);box-shadow:8px 8px 0 rgba(12,20,56,.4)">
-          <img width="1200" height="800" src="./uploads/img/10-barragan-muro-rosa.webp" alt="Barragán · muro rosa" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block"></div>
+          <img width="1200" height="800" src="./uploads/img/10-barragan-muro-rosa.webp" alt="Muro rosa y lámina de agua en una obra de Luis Barragán, México" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block"></div>
         <div style="position:relative;grid-column:span 2;grid-row:span 2;border:5px solid var(--turquesa);box-shadow:8px 8px 0 rgba(12,20,56,.4)">
-          <img width="1200" height="675" src="./uploads/img/11-casa-azul-frida.webp" alt="Casa Azul · Frida" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block"></div>
+          <img width="1200" height="675" src="./uploads/img/11-casa-azul-frida.webp" alt="Muros azules de la Casa Azul de Frida Kahlo en Coyoacán, Ciudad de México" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block"></div>
         <div style="position:relative;grid-column:span 1;grid-row:span 1;border:5px solid var(--verde);box-shadow:6px 6px 0 rgba(12,20,56,.4)">
-          <img width="882" height="1200" src="./uploads/img/12-talavera.webp" alt="Talavera" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block"></div>
+          <img width="882" height="1200" src="./uploads/img/12-talavera.webp" alt="Pieza de cerámica de talavera pintada a mano" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block"></div>
         <div style="position:relative;grid-column:span 1;grid-row:span 1;border:5px solid var(--crema);box-shadow:6px 6px 0 rgba(12,20,56,.4)">
-          <img width="900" height="526" src="./uploads/img/13-mola.webp" alt="Mola" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block"></div>
+          <img width="900" height="526" src="./uploads/img/13-mola.webp" alt="Mola kuna: textil de capas de tela de colores recortadas y cosidas a mano" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block"></div>
         <div style="position:relative;grid-column:span 2;grid-row:span 1;border:5px solid var(--maiz);box-shadow:8px 8px 0 rgba(12,20,56,.4)">
-          <img width="600" height="400" src="./uploads/img/14-valparaiso.webp" alt="Valparaíso" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block"></div>
+          <img width="600" height="400" src="./uploads/img/14-valparaiso.webp" alt="Cerros de Valparaíso cubiertos de casas de colores, Chile" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block"></div>
         <div style="position:relative;grid-column:span 2;grid-row:span 1;border:5px solid var(--fucsia);box-shadow:8px 8px 0 rgba(12,20,56,.4)">
-          <img width="1200" height="675" src="./uploads/img/15-mural-diego-rivera.webp" alt="Mural / Diego Rivera" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block"></div>
+          <img width="1200" height="675" src="./uploads/img/15-mural-diego-rivera.webp" alt="Fragmento de un mural de Diego Rivera" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block"></div>
       </div>
 
       <div class="banda banda-rombos banda-viva" aria-hidden="true" style="background:var(--maiz);margin-top:44px;opacity:.85"></div>
@@ -795,13 +830,14 @@
     <div style="max-width:1200px;margin:0 auto;position:relative;z-index:2">
       <div data-reveal style="opacity:0;transform:translateY(30px);transition:all .8s cubic-bezier(.2,.7,.2,1)">
         <span style="display:inline-block;background:#0c1c56;color:var(--maiz);font-weight:800;text-transform:uppercase;
-           letter-spacing:.14em;font-size:12px;padding:8px 14px">05 · La biblioteca · Cuatro ensayos</span>
+           letter-spacing:.14em;font-size:12px;padding:8px 14px">05 · La biblioteca · Dos series</span>
         <h2 style="font-family:'Anton',sans-serif;text-transform:uppercase;color:#111;line-height:.9;
            font-size:clamp(40px,5.5vw,84px);margin:16px 0 0">Lee la<br><span style="color:var(--fucsia)">obra completa</span></h2>
         <p style="max-width:58ch;color:#4a4038;font-size:18px;line-height:1.6;font-weight:600;margin:16px 0 0">
-          Cuatro ensayos del Arq. Orelio Martínez, con fuentes, capítulos y descarga en PDF. Cada uno lleva el
-          motivo de su tema: greca, talavera, chakana y rombos de telar.</p>
+          Ensayos y tesis del Arq. Orelio Martínez, con fuentes, capítulos y descarga en PDF. Cada uno lleva el
+          motivo de su tema: greca, talavera, chakana, rombos de telar, celosía y mola.</p>
       </div>
+      <h3 class="lib-serie"><span>Serie 01</span><b>Temas de Arquitectura</b></h3>
       <div class="lib" data-reveal data-stagger style="opacity:0;transform:translateY(30px);transition:all .8s cubic-bezier(.2,.7,.2,1)">
         <a class="lib-tarjeta" href="ladrillo.html" style="--c:#c0381c;--f:#611607;--p:var(--pat-greca)">
           <div class="arcada" aria-hidden="true"><span></span><b>01</b></div>
@@ -822,6 +858,21 @@
           <div class="arcada" aria-hidden="true"><span></span><b>04</b></div>
           <div class="cuerpo"><h3>Sombra, agua y patio</h3><p>El vacío central, el agua y la sombra como un solo sistema.</p>
             <div class="meta"><span>≈ 45 min · 16 capítulos</span><em>Leer →</em></div></div>
+        </a>
+      </div>
+      <h3 class="lib-serie"><span>Serie 02</span><b>Tesis de divulgación</b></h3>
+      <p>Guías largas y sencillas, con datos revisados y piezas interactivas: calcula un presupuesto,
+        simula un sismo o cambia la luz de un cuarto.</p>
+      <div class="lib lib-2" data-reveal data-stagger style="opacity:0;transform:translateY(30px);transition:all .8s cubic-bezier(.2,.7,.2,1)">
+        <a class="lib-tarjeta" href="construir.html" style="--c:#3f7d4a;--f:#1f2b26;--p:var(--pat-celosia)">
+          <div class="arcada" aria-hidden="true"><span></span><b>05</b></div>
+          <div class="cuerpo"><span class="tag">Serie Construir en la región</span><h3>Construir bien en Latinoamérica</h3><p>Terreno, riesgos, materiales, clima, costos por m² y autoconstrucción por etapas.</p>
+            <div class="meta"><span>≈ 43 min · 18 capítulos</span><em>Leer →</em></div></div>
+        </a>
+        <a class="lib-tarjeta" href="psicologia-del-color.html" style="--c:#c8102e;--f:#1d1a17;--p:var(--pat-mola)">
+          <div class="arcada" aria-hidden="true"><span></span><b>06</b></div>
+          <div class="cuerpo"><span class="tag">Serie Color y espacio</span><h3>Lo que el color nos hace</h3><p>Lo comprobado y lo exagerado sobre el color y la luz en el cuerpo, la mente, la casa y la ciudad.</p>
+            <div class="meta"><span>≈ 55 min · 16 capítulos</span><em>Leer →</em></div></div>
         </a>
       </div>
     </div>
@@ -897,13 +948,16 @@
           <a href="color.html">Color, luz y sombra</a>
           <a href="minimalista.html">Por qué América Latina no puede ser minimalista</a>
           <a href="patio.html">Sombra, agua y patio</a>
+          <h3 style="margin-top:18px">Tesis de divulgación</h3>
+          <a href="construir.html">Construir bien en Latinoamérica</a>
+          <a href="psicologia-del-color.html">Lo que el color nos hace</a>
         </nav>
         <nav aria-label="Secciones"><h3>La portada</h3>
           <a href="#construccion">Construcción</a><a href="#luz">Luz y sombra</a>
           <a href="#cultura">Cultura</a><a href="#patio">Patio</a><a href="#manifiesto">Manifiesto</a>
         </nav>
       </div>
-      <p class="nm-pie-fin">© 2026 No Minimal · nominimal.com · Cuatro ensayos de arquitectura latinoamericana</p>
+      <p class="nm-pie-fin">© 2026 No Minimal · nominimal.com · Ensayos y tesis de arquitectura latinoamericana</p>
     </footer>
   </section>
 </div>

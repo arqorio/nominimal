@@ -25,8 +25,15 @@
       min: 26, p: "chakana", c: "#0f4bd1", f: "#0c1c56" },
     { id: "patio", url: "patio.html", t: "Sombra, agua y patio",
       s: "El vacío central, el agua y la sombra como un solo sistema.",
-      min: 45, p: "rombos", c: "#12b6ad", f: "#08222e" }
+      min: 45, p: "rombos", c: "#12b6ad", f: "#08222e" },
+    { id: "construir", url: "construir.html", t: "Construir bien en Latinoamérica", serie: "tesis",
+      s: "Terreno, materiales, costos y autoconstrucción: una guía para construir mejor.",
+      min: 43, p: "celosia", c: "#3f7d4a", f: "#1f2b26" },
+    { id: "psicologia", url: "psicologia-del-color.html", t: "Lo que el color nos hace", serie: "tesis",
+      s: "Lo comprobado y lo exagerado sobre el color y la luz en el cuerpo, la mente y la casa.",
+      min: 55, p: "mola", c: "#c8102e", f: "#1d1a17" }
   ];
+  ENSAYOS.forEach(function (e) { e.serie = e.serie || "temas"; });
 
   function el(tag, attrs, html) {
     var n = document.createElement(tag);
@@ -176,12 +183,20 @@
   pinta();
 
   /* ---- 7. Sigue leyendo ---------------------------------------------- */
-  var otros = ENSAYOS.filter(function (e) { return e.id !== tema; });
+  // Tres tarjetas: hasta dos de la misma serie y al menos una de la otra,
+  // para que cada lector descubra la otra mitad de la biblioteca.
+  var yo = ENSAYOS.filter(function (e) { return e.id === tema; })[0] || { serie: "temas" };
+  var misma = ENSAYOS.filter(function (e) { return e.id !== tema && e.serie === yo.serie; });
+  var otra = ENSAYOS.filter(function (e) { return e.serie !== yo.serie; });
+  var giro = ENSAYOS.indexOf(yo) % Math.max(1, otra.length);
+  otra = otra.slice(giro).concat(otra.slice(0, giro));
+  var otros = misma.slice(0, 2).concat(otra).slice(0, 3);
   var tarjetas = otros.map(function (e) {
     return '<a class="nm-tarjeta" href="' + e.url + '" style="--c:' + e.c + ";--f:" + e.f +
       ";--p:var(--pat-" + e.p + ')">' +
       '<div class="arcada" aria-hidden="true"><span></span></div>' +
-      '<div class="cuerpo"><h3>' + e.t + "</h3><p>" + e.s + "</p>" +
+      '<div class="cuerpo"><span class="serie">' + (e.serie === "tesis" ? "Tesis de divulgación" : "Temas de Arquitectura") +
+      "</span><h3>" + e.t + "</h3><p>" + e.s + "</p>" +
       '<div class="meta"><span>≈ ' + e.min + " min</span><b>Leer →</b></div></div></a>";
   }).join("");
   var sigue = el("section", { "class": "nm-sigue", "aria-labelledby": "nm-sigue-t" },

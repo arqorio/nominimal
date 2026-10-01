@@ -23,6 +23,14 @@ body[data-tema="minimalista"]{--acento:#0f4bd1;--acento-txt:#0f4bd1;--acento2:#e
   --pat:var(--pat-chakana);--pat-tam:30px}
 body[data-tema="patio"]{--acento:#12b6ad;--acento-txt:#0a7771;--acento2:#f4b81f;--oscuro:#08222e;
   --pat:var(--pat-rombos);--pat-tam:30px}
+/* Serie "Tesis de divulgacion" */
+body[data-tema="construir"]{--acento:#3f7d4a;--acento-txt:#2f6a3a;--acento2:#d99a2b;--oscuro:#1f2b26;
+  --pat:var(--pat-celosia);--pat-tam:30px}
+body[data-tema="psicologia"]{--acento:#c8102e;--acento-txt:#a50d26;--acento2:#f2a900;--oscuro:#1d1a17;
+  --pat:var(--pat-mola);--pat-tam:34px}
+/* la mola se teje en arcoiris */
+body[data-tema="psicologia"] .nm-banda{opacity:1;
+  background:linear-gradient(90deg,#c8102e,#ff7a00,#f2a900,#2e7d4f,#0f6e8c,#7b2d8e)}
 
 /* ------------------------------------------------- el texto, con tema */
 .doc h2{border-left-color:var(--acento)!important}
@@ -141,6 +149,8 @@ body[data-tema="patio"]{--acento:#12b6ad;--acento-txt:#0a7771;--acento2:#f4b81f;
 .nm-tarjeta h3{margin:0;font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;
   font-size:1.55rem;line-height:1;color:#111}
 .nm-tarjeta p{margin:0;font-size:1rem;line-height:1.45;color:#4a4038}
+.nm-tarjeta .serie{font-family:'Archivo',sans-serif;font-weight:800;font-size:.72rem;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--c)}
 .nm-tarjeta .meta{margin-top:auto;padding-top:8px;display:flex;justify-content:space-between;
   align-items:center;font-family:'Archivo',sans-serif;font-weight:800;font-size:.9rem}
 .nm-tarjeta .meta b{background:var(--c);color:#fff;padding:9px 16px;border-radius:999px}
